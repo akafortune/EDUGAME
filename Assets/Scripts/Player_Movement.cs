@@ -140,7 +140,7 @@ public class Player_Movement : MonoBehaviour
             playerState = MovementStates.STANDING;
         }
 
-        rollTarget = gameObject.transform.position + new Vector3(x * rollDist, y * rollDist, 0);
+        rollTarget = gameObject.transform.position + new Vector3(x * rollDist, y * rollDist, 0).normalized * rollDist;
         
     }
 
