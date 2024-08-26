@@ -225,9 +225,9 @@ MonoBehaviour:
   rollTarget: {x: 0, y: 0, z: 0}
   restand: 0
   speed: 0.03
-  rollDist: 5
-  rollSpeed: 10
-  restandTime: 0.5
+  rollDist: 4
+  rollSpeed: 15
+  restandTime: 0.1
   restandTimer: 0
 --- !u!1 &1504812809
 GameObject:
