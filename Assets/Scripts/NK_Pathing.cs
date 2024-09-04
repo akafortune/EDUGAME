@@ -63,4 +63,9 @@ public class NK_Pathing : MonoBehaviour
             }
         }
     }
+
+    public void ReceiveAction()
+    {
+        Debug.Log("heard");
+    }
 }

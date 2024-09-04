@@ -10,7 +10,8 @@ public class Player_Movement : MonoBehaviour
     {
         STANDING,
         MOVING,
-        ROLLING
+        ROLLING,
+        ACTING
     }
 
     public enum Directions
@@ -23,40 +24,43 @@ public class Player_Movement : MonoBehaviour
     }
 
     public Directions[] facing;     //cell 1 is for left/right, cell 2 is for up/down
-    public MovementStates playerState;
+    public static MovementStates playerState;
     public Vector3 rollTarget;
     public bool restand;
     public float speed, rollDist, rollSpeed, restandTime, restandTimer =0;
     void Update()
     {
-        if(playerState != MovementStates.ROLLING)
+        if(playerState != MovementStates.ACTING)
         {
-            MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        }
-        
-        if(Input.GetAxis("Roll") > 0 && playerState != MovementStates.ROLLING)
-        {
-            playerState = MovementStates.ROLLING;
-            SetRollDir();
-        }
-
-        if(playerState == MovementStates.ROLLING & !restand)
-        {
-            if (Roll())
+            if (playerState != MovementStates.ROLLING)
             {
-                restand = true;
+                MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             }
-        }
 
-        if (restand) 
-        {
-            restandTimer += Time.deltaTime;
-
-            if(restandTimer > restandTime)
+            if (Input.GetAxis("Roll") > 0 && playerState != MovementStates.ROLLING)
             {
-                restandTimer = 0;
-                playerState = MovementStates.STANDING;
-                restand= false;
+                playerState = MovementStates.ROLLING;
+                SetRollDir();
+            }
+
+            if (playerState == MovementStates.ROLLING & !restand)
+            {
+                if (Roll())
+                {
+                    restand = true;
+                }
+            }
+
+            if (restand)
+            {
+                restandTimer += Time.deltaTime;
+
+                if (restandTimer > restandTime)
+                {
+                    restandTimer = 0;
+                    playerState = MovementStates.STANDING;
+                    restand = false;
+                }
             }
         }
     }
