@@ -324,7 +324,7 @@ MonoBehaviour:
   stunBox: {fileID: 1286338468}
   speed: 0.03
   rollDist: 4
-  stunDist: 0.5
+  stunDist: 1
   rollSpeed: 15
   restandTime: 0.1
   rollTime: 0.4
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 1286338469}
   m_Layer: 0
   m_Name: Stun Box
-  m_TagString: Untagged
+  m_TagString: Stun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,7 +460,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.2}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
