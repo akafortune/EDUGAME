@@ -17,6 +17,7 @@ public class NK_Pathing : MonoBehaviour
     public Transform[] walkingTargets;
     public int currTarget = 0;
     public float speed;
+    public Rigidbody2D collisionBox;
     public NK_State currState;
 
     public float turnClock = 0, turnTimer;
@@ -29,11 +30,21 @@ public class NK_Pathing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currState == NK_State.WAITING || currState == NK_State.REACHED_TARGET)
+        {
+            collisionBox.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        } else
+        {
+            collisionBox.constraints = RigidbodyConstraints2D.None;
+        }
+
         Walk();
     }
 
     public void Walk()
     {
+        
+
         if(currState == NK_State.WALKING)
         {
             this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, walkingTargets[currTarget].position, speed * Time.deltaTime);

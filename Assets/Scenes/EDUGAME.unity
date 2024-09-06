@@ -322,7 +322,7 @@ MonoBehaviour:
   rollDist: 4
   rollSpeed: 15
   restandTime: 0.1
-  restandTimer: 0
+  rollTime: 1
 --- !u!61 &1041398444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -526,6 +526,7 @@ MonoBehaviour:
   - {fileID: 119182709}
   currTarget: 0
   speed: 1
+  collisionBox: {fileID: 1901178947}
   currState: 0
   turnClock: 0
   turnTimer: 0

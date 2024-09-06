@@ -27,7 +27,8 @@ public class Player_Movement : MonoBehaviour
     public static MovementStates playerState;
     public Vector3 rollTarget;
     public bool restand;
-    public float speed, rollDist, rollSpeed, restandTime, restandTimer =0;
+    public float speed, rollDist, rollSpeed, restandTime, rollTime;
+    private float restandTimer = 0, rollTimer = 0;
     void Update()
     {
         if(playerState != MovementStates.ACTING)
@@ -150,10 +151,12 @@ public class Player_Movement : MonoBehaviour
 
     public bool Roll()
     {
+        rollTimer += Time.deltaTime;
         this.transform.position = Vector3.MoveTowards(this.transform.position, rollTarget, rollSpeed * Time.deltaTime);
 
-        if(this.transform.position == rollTarget)
+        if(rollTimer > rollTime)
         {
+            rollTimer = 0;
             return true;
         } else 
         { 
