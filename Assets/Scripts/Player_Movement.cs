@@ -11,7 +11,9 @@ public class Player_Movement : MonoBehaviour
         STANDING,
         MOVING,
         ROLLING,
-        ACTING
+        ACTING,
+        STUNNING,
+        HIT
     }
 
     public enum Directions
@@ -24,44 +26,64 @@ public class Player_Movement : MonoBehaviour
     }
 
     public Directions[] facing;     //cell 1 is for left/right, cell 2 is for up/down
+    public Directions lastPressed = Directions.NONE;
     public static MovementStates playerState;
     public Vector3 rollTarget;
-    public bool restand;
-    public float speed, rollDist, rollSpeed, restandTime, rollTime;
-    private float restandTimer = 0, rollTimer = 0;
+    public bool restand, actionable;
+    public GameObject stunBox;
+    public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime;
+    private float restandTimer = 0, rollTimer = 0, swingTimer = 0;
+
     void Update()
     {
-        if(playerState != MovementStates.ACTING)
-        {
-            if (playerState != MovementStates.ROLLING)
-            {
-                MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            }
+        actionable = ActionCheck();
 
-            if (Input.GetAxis("Roll") > 0 && playerState != MovementStates.ROLLING)
+        if(actionable)
+        {
+            MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));  //Execute Player Movement
+            lastPressed = PressCheck();
+            
+            if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
             {
                 playerState = MovementStates.ROLLING;
                 SetRollDir();
             }
 
-            if (playerState == MovementStates.ROLLING & !restand)
+            if(Input.GetAxis("Stun") > 0)
             {
-                if (Roll())
-                {
-                    restand = true;
-                }
+                Stun();
             }
+        }
 
-            if (restand)
+        if (playerState == MovementStates.ROLLING & !restand)
+        {
+            if (Roll())  //Roll returns a bool determining if the player is still rolling (determined via a timer)
             {
-                restandTimer += Time.deltaTime;
+                restand = true;
+            }
+        }
 
-                if (restandTimer > restandTime)
-                {
-                    restandTimer = 0;
-                    playerState = MovementStates.STANDING;
-                    restand = false;
-                }
+        if (restand)  //Restand is the time that the player recovers from the end of a roll, only around .1 sec, more of a game feel thing / prevents infinitely chaining rolls
+        {
+            restandTimer += Time.deltaTime;
+
+            if (restandTimer > restandTime)
+            {
+                restandTimer = 0;
+                playerState = MovementStates.STANDING;
+                restand = false;
+            }
+        }
+
+        if(playerState == MovementStates.STUNNING)
+        {
+            swingTimer += Time.deltaTime;
+
+            if(swingTimer > swingTime)
+            {
+                swingTimer = 0;
+                playerState = MovementStates.STANDING;
+                stunBox.SetActive(false);
             }
         }
     }
@@ -162,6 +184,61 @@ public class Player_Movement : MonoBehaviour
         { 
             return false; 
         }
+    }
+
+    public bool ActionCheck()  //Method for compiling all inactionable states into one bool, IF YOU ADD AN INACTIONABLE STATE TO THE FSM PLS ADD A CHECK HERE
+    {
+        if((playerState == MovementStates.HIT || playerState == MovementStates.ACTING) || (playerState == MovementStates.ROLLING || playerState == MovementStates.STUNNING))
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
+
+    public Directions PressCheck()
+    {
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            return Directions.RIGHT;
+        } else if(Input.GetAxis("Horizontal") < 0)
+        {
+            return Directions.LEFT;
+        } else if (Input.GetAxis("Vertical") > 0)
+        {
+            return Directions.UP;
+        } else if (Input.GetAxis("Vertical") < 0)
+        {
+            return Directions.DOWN;
+        } else
+        {
+            return lastPressed;
+        }
+    } //Stores the last direction the player pressed, useful for determining where the stun hitbox goes
+
+    public void Stun()
+    {
+        playerState = MovementStates.STUNNING;
+
+        int x = 0, y = 0;
+
+        if(lastPressed == Directions.LEFT)
+        {
+            x = - 1;
+        } else if (lastPressed == Directions.RIGHT)
+        {
+            x = 1;
+        }else if (lastPressed == Directions.UP)
+        {
+            y = 1;
+        }else if (lastPressed == Directions.DOWN)
+        {
+            y = -1;
+        }
+
+        stunBox.transform.position = this.gameObject.transform.position + new Vector3(stunDist * x, stunDist * y, 0);
+        stunBox.SetActive(true);
     }
 
 }

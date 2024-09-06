@@ -43,8 +43,6 @@ public class NK_Pathing : MonoBehaviour
 
     public void Walk()
     {
-        
-
         if(currState == NK_State.WALKING)
         {
             this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, walkingTargets[currTarget].position, speed * Time.deltaTime);
