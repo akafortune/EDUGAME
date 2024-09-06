@@ -25,6 +25,13 @@ public class Player_Movement : MonoBehaviour
         RIGHT,
     }
 
+    public enum DoorTransitions
+    {
+        NoTransition,
+        Transitioning,
+        HasTransitioned,
+    }
+
     public Directions[] facing;     //cell 1 is for left/right, cell 2 is for up/down
     public Directions lastPressed = Directions.NONE;
     public static MovementStates playerState;
@@ -33,6 +40,7 @@ public class Player_Movement : MonoBehaviour
     public GameObject stunBox;
     public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0;
+    public DoorTransitions playerTransition = DoorTransitions.NoTransition;
 
     void Update()
     {
@@ -241,4 +249,27 @@ public class Player_Movement : MonoBehaviour
         stunBox.SetActive(true);
     }
 
+
+    public void ChangeTransitionState(string t)
+    {
+        if(t.Equals("NoTransition"))
+        {
+            playerTransition = DoorTransitions.NoTransition;
+            print("No Transition");
+        }
+        else if (t.Equals("Transitioning"))
+        {
+            playerTransition = DoorTransitions.Transitioning;
+            print("Transitioning");
+        }
+        else if(t.Equals("HasTransitioned"))
+        {
+            playerTransition = DoorTransitions.HasTransitioned;
+            print("HasTransitioned");
+        }
+        else
+        {
+            print("Wrong String: " + t);
+        }
+    }
 }
