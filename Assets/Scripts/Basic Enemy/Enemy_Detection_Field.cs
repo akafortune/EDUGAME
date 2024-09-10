@@ -5,15 +5,20 @@ using UnityEngine;
 public class Enemy_Detection_Field : MonoBehaviour
 {
     public GameObject parent;
-    // Start is called before the first frame update
-    void Start()
+   
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.tag == "Player")
+        {
+            parent.GetComponent<Basic_Enemy_Behavior>().enemyState = Basic_Enemy_Behavior.EnemyState.CHASING;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            parent.GetComponent<Basic_Enemy_Behavior>().enemyState = Basic_Enemy_Behavior.EnemyState.LOOKING;
+        }
     }
 }
