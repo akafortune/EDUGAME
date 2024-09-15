@@ -8,14 +8,15 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     {
         PATROLLING, 
         CHASING,
-        LOOKING
+        LOOKING,
+        STUNNED
     }
 
     public EnemyState enemyState;
     public Transform[] waypoints;
-    public GameObject player;
-    public float patrolSpeed, chaseSpeed, lookTime;
-    private float  lookTimer = 0;
+    public GameObject chaseTarget;
+    public float patrolSpeed, chaseSpeed, lookTime, stunTime;
+    private float  lookTimer = 0, stunTimer = 0;
     public int nextWaypoint = 0;
 
     // Start is called before the first frame update
@@ -27,25 +28,44 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemyState== EnemyState.PATROLLING)
-        {
-            Patrol();
-        }
 
-        if(enemyState == EnemyState.CHASING)
+        if(enemyState != EnemyState.STUNNED)
         {
-            Chase();
-        }
+            if (enemyState == EnemyState.PATROLLING)
+            {
+                Patrol();
+            }
 
-        if (enemyState == EnemyState.LOOKING)
+            if (enemyState == EnemyState.CHASING)
+            {
+                Chase();
+            }
+
+            if (enemyState == EnemyState.LOOKING)
+            {
+                Look();
+            }
+        } else if (enemyState == EnemyState.STUNNED)
         {
-            Look();
+            Stun();
+        }
+       
+    }
+
+    void Stun()
+    {
+        stunTime += Time.deltaTime;
+
+        if(stunTime >= stunTimer)
+        {
+            enemyState = EnemyState.LOOKING;
+            stunTime = 0;
         }
     }
 
     void Chase()
     {
-        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, chaseTarget.transform.position, chaseSpeed * Time.deltaTime);
     }
 
     void Look()
@@ -81,6 +101,14 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             {
                 nextWaypoint++;
             }
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Stun")
+        {
+            enemyState = EnemyState.STUNNED;
         }
     }
 
