@@ -14,8 +14,8 @@ public class Basic_Enemy_Behavior : MonoBehaviour
 
     public EnemyState enemyState;
     public Transform[] waypoints;
-    public GameObject chaseTarget;
-    public float patrolSpeed, chaseSpeed, lookTime, stunTime;
+    public GameObject chaseTarget, atkBox;
+    public float patrolSpeed, chaseSpeed, lookTime, stunTime, atkDist;
     private float  lookTimer = 0, stunTimer = 0;
     public int nextWaypoint = 0;
 
@@ -109,6 +109,18 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         if(collision.tag == "Stun")
         {
             enemyState = EnemyState.STUNNED;
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "Player" )
+        {
+            if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
+            {
+                Player_Movement.playerState = Player_Movement.MovementStates.HIT;
+                enemyState = EnemyState.PATROLLING;
+            }
         }
     }
 

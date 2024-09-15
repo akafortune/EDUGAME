@@ -27,16 +27,22 @@ public class Player_Movement : MonoBehaviour
 
     public Directions[] facing;     //cell 1 is for left/right, cell 2 is for up/down
     public Directions lastPressed = Directions.NONE;
+    public MovementStates[] inactionableStates;
     public static MovementStates playerState;
     public Vector3 rollTarget;
-    public bool restand, actionable;
+    public bool restand, actionable, intangible;
     public GameObject stunBox;
-    public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime;
-    private float restandTimer = 0, rollTimer = 0, swingTimer = 0;
+    public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime;
+    private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
 
     void Update()
     {
         actionable = ActionCheck();
+
+        if (intangible)
+        {
+            IntangibleTimer();
+        }
 
         if(actionable)
         {
@@ -59,12 +65,14 @@ public class Player_Movement : MonoBehaviour
         {
             if (Roll())  //Roll returns a bool determining if the player is still rolling (determined via a timer)
             {
+                intangible = true;
                 restand = true;
             }
         }
 
         if (restand)  //Restand is the time that the player recovers from the end of a roll, only around .1 sec, more of a game feel thing / prevents infinitely chaining rolls
         {
+            intangible = false;
             restandTimer += Time.deltaTime;
 
             if (restandTimer > restandTime)
@@ -85,6 +93,35 @@ public class Player_Movement : MonoBehaviour
                 playerState = MovementStates.STANDING;
                 stunBox.SetActive(false);
             }
+        }
+
+        if(playerState == MovementStates.HIT)
+        {
+            stunBox.SetActive(false);
+            Hit();
+        }
+    }
+
+    void IntangibleTimer()
+    {
+        intangibleTimer += Time.deltaTime;
+
+        if(intangibleTimer >= intangibleTime)
+        {
+            intangible = false;
+            intangibleTime = 0;
+        }
+    }
+
+    public void Hit()
+    {
+        downTimer += Time.deltaTime;
+
+        if(downTimer > downTime)
+        {
+            downTimer = 0;
+            intangible = true;
+            playerState = MovementStates.STANDING;
         }
     }
 
@@ -188,13 +225,15 @@ public class Player_Movement : MonoBehaviour
 
     public bool ActionCheck()  //Method for compiling all inactionable states into one bool, IF YOU ADD AN INACTIONABLE STATE TO THE FSM PLS ADD A CHECK HERE
     {
-        if((playerState == MovementStates.HIT || playerState == MovementStates.ACTING) || (playerState == MovementStates.ROLLING || playerState == MovementStates.STUNNING))
+        for(int i = 0; i < inactionableStates.Length; i++)
         {
-            return false;
-        } else
-        {
-            return true;
+            if(playerState == inactionableStates[i])
+            {
+                return false;
+            }
         }
+
+        return true;
     }
 
     public Directions PressCheck()
@@ -239,6 +278,11 @@ public class Player_Movement : MonoBehaviour
 
         stunBox.transform.position = this.gameObject.transform.position + new Vector3(stunDist * x, stunDist * y, 0);
         stunBox.SetActive(true);
+    }
+
+    public void SetState(MovementStates newState)
+    {
+        playerState = newState;
     }
 
 }

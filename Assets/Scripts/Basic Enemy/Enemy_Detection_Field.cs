@@ -17,7 +17,7 @@ public class Enemy_Detection_Field : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.name == "Player")
+        if (collision.name == "Player" && parent.GetComponent<Basic_Enemy_Behavior>().enemyState != Basic_Enemy_Behavior.EnemyState.PATROLLING)
         {
             parent.GetComponent<Basic_Enemy_Behavior>().enemyState = Basic_Enemy_Behavior.EnemyState.LOOKING;
         }
