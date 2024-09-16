@@ -14,7 +14,7 @@ public class Basic_Enemy_Behavior : MonoBehaviour
 
     public EnemyState enemyState;
     public Transform[] waypoints;
-    public GameObject chaseTarget, atkBox;
+    public GameObject chaseTarget;
     public float patrolSpeed, chaseSpeed, lookTime, stunTime, atkDist;
     private float  lookTimer = 0, stunTimer = 0;
     public int nextWaypoint = 0;
@@ -119,6 +119,15 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
             {
                 Player_Movement.playerState = Player_Movement.MovementStates.HIT;
+                enemyState = EnemyState.PATROLLING;
+            }
+        }
+
+        if(collision.gameObject.name == "NK")
+        {
+            if(collision.gameObject.GetComponent<NK_Pathing>().effectable)
+            {
+                collision.gameObject.GetComponent<NK_Pathing>().currState = NK_Pathing.NK_State.HIT;
                 enemyState = EnemyState.PATROLLING;
             }
         }

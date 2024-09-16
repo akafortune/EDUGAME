@@ -11,14 +11,17 @@ public class NK_Pathing : MonoBehaviour
         TURNING,
         STUNNED,
         REACHED_TARGET,
-        DEAD
+        HIT
     }
 
     public Transform[] walkingTargets;
     public int currTarget = 0;
-    public float speed;
+    public float speed, deathTime;
+    private float deathTimer = 0;
+    public bool effectable;
     public Rigidbody2D collisionBox;
     public NK_State currState;
+    public NK_State[] ineffectiveStates;
 
     public float turnClock = 0, turnTimer;
     // Start is called before the first frame update
@@ -30,7 +33,9 @@ public class NK_Pathing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currState == NK_State.WAITING || currState == NK_State.REACHED_TARGET)
+        effectable = effectiveCheck();
+
+        if (!effectable)
         {
             collisionBox.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         } else
@@ -38,38 +43,79 @@ public class NK_Pathing : MonoBehaviour
             collisionBox.constraints = RigidbodyConstraints2D.None;
         }
 
-        Walk();
-    }
-
-    public void Walk()
-    {
         if(currState == NK_State.WALKING)
         {
-            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, walkingTargets[currTarget].position, speed * Time.deltaTime);
-
-            if (this.gameObject.transform.position == walkingTargets[currTarget].position)
-            {
-                if(currTarget + 1 >= walkingTargets.Length)
-                {
-                    currTarget++;
-                    currState = NK_State.REACHED_TARGET;
-                } else
-                {
-                    currState = NK_State.TURNING;
-                }
-            }
+            Walk();
         }
 
         if(currState == NK_State.TURNING)
         {
-            turnClock += Time.deltaTime;
+            Turn();
+        }
 
-            if(turnClock >= turnTimer)
+        if(currState == NK_State.HIT)
+        {
+            collisionBox.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+            Hit();
+        }
+       
+    }
+
+    public bool effectiveCheck()
+    {
+        for(int i = 0; i < ineffectiveStates.Length; i++)
+        {
+            if(currState == ineffectiveStates[i])
             {
-                turnClock = 0;
-                currTarget++;
-                currState = NK_State.WALKING;
+                return false;
             }
+        }
+
+        return true;
+    }
+
+    public void Walk()
+    {
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, walkingTargets[currTarget].position, speed * Time.deltaTime);
+
+        if (this.gameObject.transform.position == walkingTargets[currTarget].position)
+        {
+            if(currTarget + 1 >= walkingTargets.Length)
+            {
+                currTarget++;
+                currState = NK_State.REACHED_TARGET;
+            } else
+            {
+                currState = NK_State.TURNING;
+            }
+        }
+        
+    }
+
+    public void Turn()
+    {
+        turnClock += Time.deltaTime;
+
+        if (turnClock >= turnTimer)
+        {
+            turnClock = 0;
+            currTarget++;
+            currState = NK_State.WALKING;
+        }
+    }
+
+    public void Hit()
+    {
+        deathTimer += Time.deltaTime;
+
+        if(deathTimer > deathTime)
+        {
+            deathTimer = 0;
+            currTarget = 0;
+            this.gameObject.SetActive(false);
+            this.gameObject.transform.position = walkingTargets[0].transform.position;
+            currState = NK_State.WAITING;
+            this.gameObject.SetActive(true);
         }
     }
 
