@@ -32,8 +32,14 @@ public class Player_Movement : MonoBehaviour
     public Vector3 rollTarget;
     public bool restand, actionable, intangible;
     public GameObject stunBox;
+    private BoxCollider2D collisionBox;
     public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
+
+    private void Start()
+    {
+        collisionBox = this.gameObject.GetComponent<BoxCollider2D>();
+    }
 
     void Update()
     {
@@ -42,6 +48,10 @@ public class Player_Movement : MonoBehaviour
         if (intangible)
         {
             IntangibleTimer();
+            collisionBox.isTrigger = true;
+        } else
+        {
+            collisionBox.isTrigger = false;
         }
 
         if(actionable)
@@ -63,9 +73,9 @@ public class Player_Movement : MonoBehaviour
 
         if (playerState == MovementStates.ROLLING & !restand)
         {
-            if (Roll())  //Roll returns a bool determining if the player is still rolling (determined via a timer)
+            intangible = true;
+            if (Roll())  //Roll returns a bool determining if the player is done rolling (determined via a timer)
             {
-                intangible = true;
                 restand = true;
             }
         }

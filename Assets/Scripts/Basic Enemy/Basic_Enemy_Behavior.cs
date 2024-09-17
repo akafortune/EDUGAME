@@ -19,10 +19,10 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     public Transform[] waypoints;
     private Vector3 dashTarget;
     public GameObject chaseTarget;
-    public float patrolSpeed, chaseSpeed, chargeSpeed, lookTime, stunTime, readyTime, chargeDist;
-    private float  lookTimer = 0, stunTimer = 0, readyTimer = 0;
+    public float patrolSpeed, chaseSpeed, chargeSpeed, lookTime, stunTime, readyTime, chargeTime, chargeDist;
+    private float lookTimer = 0, stunTimer = 0, readyTimer = 0, chargeTimer = 0;
     public int nextWaypoint = 0;
-    public bool lockedIn, otherInRange;
+    public bool lockedIn, otherInRange, collisionInCharge;
 
     // Start is called before the first frame update
     void Start()
@@ -57,18 +57,25 @@ public class Basic_Enemy_Behavior : MonoBehaviour
                 Look();
             }
 
-        } else if (enemyState == EnemyState.STUNNED)
+        }
+
+        if (enemyState == EnemyState.STUNNED)
         {
             Stun();
-        }
-        else if (enemyState == EnemyState.READYING)
+        }else 
         {
-            Readying();
+            if (enemyState == EnemyState.READYING)
+            {
+                Readying();
+            }
+            else if (enemyState == EnemyState.CHARGING)
+            {
+                Charging();
+            }
         }
-        else if (enemyState == EnemyState.CHARGING)
-        {
-            Charging();
-        }
+
+        
+        
 
     }
 
@@ -87,9 +94,9 @@ public class Basic_Enemy_Behavior : MonoBehaviour
 
     void Stun()
     {
-        stunTime += Time.deltaTime;
+        stunTimer += Time.deltaTime;
 
-        if(stunTime >= stunTimer)
+        if(stunTimer >= stunTime)
         {
             enemyState = EnemyState.LOOKING;
             stunTime = 0;
@@ -127,9 +134,16 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     void Charging()
     {
         this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, dashTarget, chargeSpeed * Time.deltaTime);
+        chargeTimer += Time.deltaTime;
 
-        if(this.gameObject.transform.position == dashTarget)
+        if(Vector3.Distance(this.gameObject.transform.position,dashTarget) < .5 || chargeTimer >= chargeTime)
         {
+            chargeTimer = 0;
+            enemyState = EnemyState.LOOKING;
+        }  else if (collisionInCharge)
+        {
+            chargeTimer = 0;
+            collisionInCharge = false;
             enemyState = EnemyState.LOOKING;
         }
     }
@@ -174,13 +188,20 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     {
         if(collision.tag == "Stun")
         {
+            Debug.Log("ran");
             enemyState = EnemyState.STUNNED;
         }
     }
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Player" )
+        if (enemyState == EnemyState.CHARGING)
+        {
+            collisionInCharge = true;
+        }
+
+
+        if (collision.gameObject.name == "Player" )
         {
             if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
             {
