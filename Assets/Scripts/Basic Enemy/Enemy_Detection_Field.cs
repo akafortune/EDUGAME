@@ -5,21 +5,27 @@ using UnityEngine;
 public class Enemy_Detection_Field : MonoBehaviour
 {
     public GameObject parent;
-   
-    private void OnTriggerEnter2D(Collider2D collision)
+    public Basic_Enemy_Behavior behavior;
+
+    private void Start()
+    {
+        behavior = parent.GetComponent<Basic_Enemy_Behavior>();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.name == "Player" || collision.name == "NK")
         {
-            parent.GetComponent<Basic_Enemy_Behavior>().chaseTarget = collision.gameObject;
-            parent.GetComponent<Basic_Enemy_Behavior>().enemyState = Basic_Enemy_Behavior.EnemyState.CHASING;
+            behavior.chaseTarget = collision.gameObject;
+            behavior.otherInRange = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((collision.name == "Player" || collision.name == "NK") && parent.GetComponent<Basic_Enemy_Behavior>().enemyState != Basic_Enemy_Behavior.EnemyState.PATROLLING)
+        if (collision.name == "Player" || collision.name == "NK")
         {
-            parent.GetComponent<Basic_Enemy_Behavior>().enemyState = Basic_Enemy_Behavior.EnemyState.LOOKING;
+            behavior.otherInRange = false;
         }
     }
 }

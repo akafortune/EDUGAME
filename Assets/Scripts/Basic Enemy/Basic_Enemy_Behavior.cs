@@ -8,16 +8,21 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     {
         PATROLLING, 
         CHASING,
+        READYING,
+        CHARGING,
         LOOKING,
         STUNNED
     }
 
     public EnemyState enemyState;
+    public EnemyState[] lockedInStates;
     public Transform[] waypoints;
+    private Vector3 dashTarget;
     public GameObject chaseTarget;
-    public float patrolSpeed, chaseSpeed, lookTime, stunTime, atkDist;
-    private float  lookTimer = 0, stunTimer = 0;
+    public float patrolSpeed, chaseSpeed, chargeSpeed, lookTime, stunTime, readyTime, chargeDist;
+    private float  lookTimer = 0, stunTimer = 0, readyTimer = 0;
     public int nextWaypoint = 0;
+    public bool lockedIn, otherInRange;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +34,15 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     void Update()
     {
 
-        if(enemyState != EnemyState.STUNNED)
+        lockedIn = ActionCheck();
+
+        if(!lockedIn)
         {
+            if (otherInRange)
+            {
+                enemyState = EnemyState.CHASING;
+            }
+
             if (enemyState == EnemyState.PATROLLING)
             {
                 Patrol();
@@ -40,16 +52,37 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             {
                 Chase();
             }
-
             if (enemyState == EnemyState.LOOKING)
             {
                 Look();
             }
+
         } else if (enemyState == EnemyState.STUNNED)
         {
             Stun();
         }
-       
+        else if (enemyState == EnemyState.READYING)
+        {
+            Readying();
+        }
+        else if (enemyState == EnemyState.CHARGING)
+        {
+            Charging();
+        }
+
+    }
+
+    bool ActionCheck()
+    {
+        for(int i = 0; i < lockedInStates.Length; i++)
+        {
+            if (enemyState == lockedInStates[i])
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void Stun()
@@ -66,6 +99,39 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     void Chase()
     {
         this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, chaseTarget.transform.position, chaseSpeed * Time.deltaTime);
+
+        if(Vector3.Distance(this.gameObject.transform.position, chaseTarget.transform.position) <= chargeDist)
+        {
+            enemyState = EnemyState.READYING;
+        }
+
+        if (!otherInRange)
+        {
+            enemyState = EnemyState.LOOKING;
+        }
+    }
+
+
+    void Readying()
+    {
+        readyTimer += Time.deltaTime;
+
+        if(readyTimer > readyTime)
+        {
+            readyTimer = 0;
+            dashTarget = chaseTarget.transform.position;
+            enemyState = EnemyState.CHARGING;
+        }
+    }
+
+    void Charging()
+    {
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, dashTarget, chargeSpeed * Time.deltaTime);
+
+        if(this.gameObject.transform.position == dashTarget)
+        {
+            enemyState = EnemyState.LOOKING;
+        }
     }
 
     void Look()
