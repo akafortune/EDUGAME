@@ -26,15 +26,15 @@ public class Player_Movement : MonoBehaviour
         RIGHT,
     }
 
-    public Directions[] facing;     //cell 1 is for left/right, cell 2 is for up/down
+    public Directions[] facing;     //cell 0 is for left/right, cell 1 is for up/down
     public Directions lastPressed = Directions.NONE;
     public MovementStates[] inactionableStates;
     public static MovementStates playerState;
-    public Vector3 rollTarget;
-    public bool restand, actionable, intangible;
+    public Vector3 rollTarget, hitPos, reelTarget;
+    public bool restand, actionable, intangible, reeled = false;
     public GameObject stunBox;
     private BoxCollider2D collisionBox;
-    public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime;
+    public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
 
     private void Start()
@@ -47,6 +47,11 @@ public class Player_Movement : MonoBehaviour
         actionable = ActionCheck();
 
         collisionBox.isTrigger = false;
+
+        if (intangible)
+        {
+            IntangibleTimer();
+        }
 
         if(actionable)
         {
@@ -62,6 +67,18 @@ public class Player_Movement : MonoBehaviour
             if(Input.GetAxis("Stun") > 0)
             {
                 Stun();
+            }
+
+            if (playerState == MovementStates.STUNNING)
+            {
+                swingTimer += Time.deltaTime;
+
+                if (swingTimer > swingTime)
+                {
+                    swingTimer = 0;
+                    playerState = MovementStates.STANDING;
+                    stunBox.SetActive(false);
+                }
             }
         }
 
@@ -87,23 +104,43 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if(playerState == MovementStates.STUNNING)
-        {
-            swingTimer += Time.deltaTime;
-
-            if(swingTimer > swingTime)
-            {
-                swingTimer = 0;
-                playerState = MovementStates.STANDING;
-                stunBox.SetActive(false);
-            }
-        }
+        
 
         if(playerState == MovementStates.HIT)
         {
+            if (!reeled)
+            {
+                SetReelPos();
+            }
             stunBox.SetActive(false);
             Hit();
         }
+    }
+
+    void SetReelPos()
+    {
+        float x = 0, y = 0;
+
+        if (hitPos.x > this.gameObject.transform.position.x + hitPosLenience)
+        {
+            x = -1;
+        } else if (hitPos.x < this.gameObject.transform.position.x - hitPosLenience)
+        {
+            x = 1;
+        }
+
+        if (hitPos.y > this.gameObject.transform.position.y + hitPosLenience)
+        {
+            y = -1;
+        }
+        else if (hitPos.y < this.gameObject.transform.position.y - hitPosLenience)
+        {
+            y = 1;
+        }
+
+        Vector3 reelDir = new Vector3(x*reelDist, y*reelDist, 0f);
+        reelTarget = this.gameObject.transform.position + reelDir;
+        reeled = true;
     }
 
     void IntangibleTimer()
@@ -119,6 +156,8 @@ public class Player_Movement : MonoBehaviour
 
     public void Hit()
     {
+        this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, reelTarget, reelSpeed * Time.deltaTime);
+
         downTimer += Time.deltaTime;
 
         if(downTimer > downTime)
@@ -126,6 +165,7 @@ public class Player_Movement : MonoBehaviour
             downTimer = 0;
             intangible = true;
             playerState = MovementStates.STANDING;
+            reeled = false;
         }
     }
 

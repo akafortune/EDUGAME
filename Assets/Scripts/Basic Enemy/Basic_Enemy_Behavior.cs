@@ -205,6 +205,7 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
             {
                 Player_Movement.playerState = Player_Movement.MovementStates.HIT;
+                collision.gameObject.GetComponent<Player_Movement>().hitPos = this.gameObject.transform.position;
                 enemyState = EnemyState.PATROLLING;
             }
         }
