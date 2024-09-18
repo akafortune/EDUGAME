@@ -14,20 +14,23 @@ public class NK_Pathing : MonoBehaviour
         HIT
     }
 
+
+    public NK_State currState;
+    public NK_State[] ineffectiveStates;
     public Transform[] walkingTargets;
+    public Rigidbody2D collisionBox;
+    private Transform cancerCellTarget;
     public int currTarget = 0;
     public float speed, deathTime;
     private float deathTimer = 0;
     public bool effectable;
-    public Rigidbody2D collisionBox;
-    public NK_State currState;
-    public NK_State[] ineffectiveStates;
 
     public float turnClock = 0, turnTimer;
     // Start is called before the first frame update
     void Start()
     {
         currState = NK_State.WAITING;
+        cancerCellTarget = walkingTargets[walkingTargets.Length - 1];
     }
 
     // Update is called once per frame
@@ -84,6 +87,7 @@ public class NK_Pathing : MonoBehaviour
             {
                 currTarget++;
                 currState = NK_State.REACHED_TARGET;
+                cancerCellTarget.GetComponent<Cancer_Cell_NK_Bheavior>().currState = Cancer_Cell_NK_Bheavior.CancerClusterState.BREAKING_DOWN;
             } else
             {
                 currState = NK_State.TURNING;

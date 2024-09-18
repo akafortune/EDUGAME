@@ -13,7 +13,8 @@ public class Player_Movement : MonoBehaviour
         ROLLING,
         ACTING,
         STUNNING,
-        HIT
+        HIT,
+        DEAD
     }
 
     public enum Directions
@@ -45,14 +46,7 @@ public class Player_Movement : MonoBehaviour
     {
         actionable = ActionCheck();
 
-        if (intangible)
-        {
-            IntangibleTimer();
-            collisionBox.isTrigger = true;
-        } else
-        {
-            collisionBox.isTrigger = false;
-        }
+        collisionBox.isTrigger = false;
 
         if(actionable)
         {
