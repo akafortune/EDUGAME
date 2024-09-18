@@ -786,6 +786,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1838741657300139335, guid: 445457833b344e443a9da92ceb46f262, type: 3}
+      propertyPath: stunTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838741657300139335, guid: 445457833b344e443a9da92ceb46f262, type: 3}
       propertyPath: cancerCellTarget
       value: 
       objectReference: {fileID: 1309144753}

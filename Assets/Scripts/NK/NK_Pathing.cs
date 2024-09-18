@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Basic_Enemy_Behavior;
 
 public class NK_Pathing : MonoBehaviour
 {
@@ -21,8 +22,8 @@ public class NK_Pathing : MonoBehaviour
     public Rigidbody2D collisionBox;
     private Transform cancerCellTarget;
     public int currTarget = 0;
-    public float speed, deathTime;
-    private float deathTimer = 0;
+    public float speed, deathTime, stunTime;
+    private float deathTimer = 0, stunTimer = 0;
     public bool effectable;
 
     public float turnClock = 0, turnTimer;
@@ -61,6 +62,11 @@ public class NK_Pathing : MonoBehaviour
             collisionBox.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
             Hit();
         }
+
+        if(currState == NK_State.STUNNED)
+        {
+            Stun();
+        }
        
     }
 
@@ -96,6 +102,17 @@ public class NK_Pathing : MonoBehaviour
         
     }
 
+    public void Stun()
+    {
+        stunTimer += Time.deltaTime;
+
+        if(stunTimer >= stunTime)
+        {
+            stunTimer = 0;
+            currState = NK_State.WALKING;
+        }
+    }
+
     public void Turn()
     {
         turnClock += Time.deltaTime;
@@ -123,8 +140,11 @@ public class NK_Pathing : MonoBehaviour
         }
     }
 
-    public void ReceiveAction()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("heard");
+        if (collision.tag == "Stun" && effectable)
+        {
+            currState = NK_State.STUNNED;
+        }
     }
 }

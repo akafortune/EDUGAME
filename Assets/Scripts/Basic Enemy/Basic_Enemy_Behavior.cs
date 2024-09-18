@@ -188,7 +188,6 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     {
         if(collision.tag == "Stun")
         {
-            Debug.Log("ran");
             enemyState = EnemyState.STUNNED;
         }
     }
