@@ -246,6 +246,7 @@ MonoBehaviour:
   downTime: 0.5
   intangibleTime: 1
   hitPosLenience: 0.2
+  playerTransition: 0
 --- !u!61 &1041398444
 BoxCollider2D:
   m_ObjectHideFlags: 0

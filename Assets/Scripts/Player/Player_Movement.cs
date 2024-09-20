@@ -25,8 +25,6 @@ public class Player_Movement : MonoBehaviour
         LEFT,
         RIGHT,
     }
-
-    public Directions[] facing;     //cell 0 is for left/right, cell 1 is for up/down
     public enum DoorTransitions
     {
         NoTransition,
@@ -49,8 +47,6 @@ public class Player_Movement : MonoBehaviour
     {
         collisionBox = this.gameObject.GetComponent<BoxCollider2D>();
     }
-    public float speed, rollDist, stunDist, rollSpeed, restandTime, rollTime, swingTime;
-    private float restandTimer = 0, rollTimer = 0, swingTimer = 0;
     public DoorTransitions playerTransition = DoorTransitions.NoTransition;
 
     void Update()
@@ -80,16 +76,18 @@ public class Player_Movement : MonoBehaviour
                 Stun();
             }
 
-            if (playerState == MovementStates.STUNNING)
-            {
-                swingTimer += Time.deltaTime;
+            
+        }
 
-                if (swingTimer > swingTime)
-                {
-                    swingTimer = 0;
-                    playerState = MovementStates.STANDING;
-                    stunBox.SetActive(false);
-                }
+        if (playerState == MovementStates.STUNNING)
+        {
+            swingTimer += Time.deltaTime;
+
+            if (swingTimer > swingTime)
+            {
+                swingTimer = 0;
+                playerState = MovementStates.STANDING;
+                stunBox.SetActive(false);
             }
         }
 
