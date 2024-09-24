@@ -37,7 +37,8 @@ public class Player_Movement : MonoBehaviour
     public MovementStates[] inactionableStates;
     public static MovementStates playerState;
     public Vector3 rollTarget, hitPos, reelTarget;
-    public bool restand, actionable, intangible, reeled = false;
+    public Transform carryPos;
+    public bool restand, actionable, intangible, carrying, reeled = false;
     public GameObject stunBox;
     private BoxCollider2D collisionBox;
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
@@ -64,19 +65,20 @@ public class Player_Movement : MonoBehaviour
         {
             MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));  //Execute Player Movement
             lastPressed = PressCheck();
-            
-            if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
-            {
-                playerState = MovementStates.ROLLING;
-                SetRollDir();
-            }
 
-            if(Input.GetAxis("Stun") > 0)
+            if (!carrying)
             {
-                Stun();
-            }
+                if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
+                {
+                    playerState = MovementStates.ROLLING;
+                    SetRollDir();
+                }
 
-            
+                if (Input.GetAxis("Stun") > 0)
+                {
+                    Stun();
+                }
+            }
         }
 
         if (playerState == MovementStates.STUNNING)
