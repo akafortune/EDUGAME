@@ -152,8 +152,8 @@ Transform:
   m_GameObject: {fileID: 770631946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.18, y: 0, z: 0}
-  m_LocalScale: {x: 0.8409, y: 0.4835175, z: 0.8409}
+  m_LocalPosition: {x: 5.18, y: 0, z: 10}
+  m_LocalScale: {x: 0.85, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 967395135}
@@ -227,6 +227,7 @@ MonoBehaviour:
   player: {fileID: 0}
   actBox: {fileID: 0}
   throwDir: {x: 0, y: 0, z: 0}
+  trueScale: {x: 0, y: 0, z: 0}
   barrelCollider: {fileID: 770631951}
   throwTime: 0.5
   throwDist: 15
@@ -886,7 +887,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
