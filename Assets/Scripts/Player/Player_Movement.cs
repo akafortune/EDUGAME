@@ -39,7 +39,7 @@ public class Player_Movement : MonoBehaviour
     public Vector3 rollTarget, hitPos, reelTarget;
     public Transform carryPos;
     public bool restand, actionable, intangible, carrying, reeled = false;
-    public GameObject stunBox;
+    public GameObject stunBox, carryingItem;
     private BoxCollider2D collisionBox;
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
@@ -125,6 +125,14 @@ public class Player_Movement : MonoBehaviour
             }
             stunBox.SetActive(false);
             Hit();
+        }
+
+        if(carryingItem != null)
+        {
+            if (carryingItem.GetComponent<Radioactive_Behavior>().currState == Radioactive_Behavior.Radioactive_State.EXPLODING)
+            {
+                carrying = false;
+            }
         }
     }
 

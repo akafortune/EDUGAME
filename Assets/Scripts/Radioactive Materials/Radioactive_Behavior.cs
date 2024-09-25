@@ -13,22 +13,28 @@ public class Radioactive_Behavior : MonoBehaviour
     }
 
     public Radioactive_State currState;
-    public GameObject player, actBox;
+    private Radioactive_State nextState;
+    public GameObject player, actBox, explosionBox;
+    private Vector3 originPos;
     public Vector3 throwDir, trueScale;
     public BoxCollider2D barrelCollider;
-    public float throwTime, throwDist, scaleValue;
-    private float throwTimer = 0;
-    private bool rise = true;
+    public float throwTime, throwDist, scaleValue, decayTime, explosionTime;
+    private float throwTimer = 0, decayTimer = 0, explosionTimer = 0;
+    private bool rise = true, plucked = false, explosionFirstLoop = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         trueScale = this.gameObject.transform.localScale;
+        originPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        StateDeterminer();
+
+
         if(currState == Radioactive_State.PICKED_UP)
         {
             PickedUp();
@@ -43,22 +49,52 @@ public class Radioactive_Behavior : MonoBehaviour
         {
             Thrown();
         }
+        
+        if(currState == Radioactive_State.EXPLODING)
+        {
+            Exploding();
+        }
+    }
+
+    void StateDeterminer()
+    {
+        if (plucked)
+        {
+            decayTimer+= Time.deltaTime;
+
+            if(decayTimer > decayTime)
+            {
+                if (currState == Radioactive_State.THROWN)
+                {
+                    nextState = Radioactive_State.EXPLODING;
+                } else
+                {
+                    nextState = Radioactive_State.GROUND;
+                    currState = Radioactive_State.EXPLODING;
+                }
+            }
+        }
     }
 
     void PickedUp()
     {
         this.gameObject.transform.position = player.GetComponent<Player_Movement>().carryPos.position;
         barrelCollider.isTrigger = true;
+        plucked = true;
     }
 
     void Ground()
     {
-
+        actBox.SetActive(true);
         barrelCollider.isTrigger = false;
     }
 
     void Thrown()
     {
+        actBox.SetActive(false);
+
+        barrelCollider.isTrigger = false;
+
         throwTimer += Time.deltaTime;
 
         this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 10);
@@ -83,10 +119,39 @@ public class Radioactive_Behavior : MonoBehaviour
         if(throwTimer >= throwTime)
         {
             throwTimer = 0;
-            currState = Radioactive_State.GROUND;
+            currState = nextState;
             rise = true;
             this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
             this.gameObject.transform.localScale = trueScale;
         }
+    }
+
+    void Exploding()
+    {
+       if(!explosionFirstLoop)
+        {
+            explosionFirstLoop = true;
+            explosionBox.SetActive(true);
+            this.GetComponent<Renderer>().enabled = false;
+        }
+
+        explosionTimer += Time.deltaTime;
+
+        if(explosionTimer >= explosionTime)
+        {
+            explosionTimer = 0;
+            explosionBox.SetActive(false);
+            explosionFirstLoop= false;
+            respawnRM();
+        }
+    }
+
+    void respawnRM()
+    {
+        decayTimer = 0;
+        plucked = false;
+        currState = Radioactive_State.GROUND;
+        this.gameObject.transform.position = originPos;
+        this.GetComponent<Renderer>().enabled = true;
     }
 }

@@ -20,7 +20,7 @@ public class Radioactive_ActBox : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && parent.GetComponent<Radioactive_Behavior>().currState != Radioactive_Behavior.Radioactive_State.EXPLODING)
         {
             if (playerScript.actionable && !playerScript.carrying)
             {
@@ -28,16 +28,18 @@ public class Radioactive_ActBox : MonoBehaviour
                 {
                     playerScript.carrying = true;
                     parent.GetComponent<Radioactive_Behavior>().currState = Radioactive_Behavior.Radioactive_State.PICKED_UP;
+                    playerScript.carryingItem = parent;
                 }
             }
 
             if(playerScript.carrying && parent.GetComponent<Radioactive_Behavior>().currState == Radioactive_Behavior.Radioactive_State.PICKED_UP)
             {
-                if(Input.GetAxis("Throw") > 0)
+                if(Input.GetAxis("Throw") > 0 && parent.GetComponent<Radioactive_Behavior>().currState != Radioactive_Behavior.Radioactive_State.EXPLODING)
                 {
                     playerScript.carrying = false;
                     SetThrowDir();
                     parent.GetComponent<Radioactive_Behavior>().currState = Radioactive_Behavior.Radioactive_State.THROWN;
+                    playerScript.carryingItem = null;
                 }
             }
         }
