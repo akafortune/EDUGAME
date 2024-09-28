@@ -81,10 +81,12 @@ public class Radioactive_Behavior : MonoBehaviour
         this.gameObject.transform.position = player.GetComponent<Player_Movement>().carryPos.position;
         barrelCollider.isTrigger = true;
         plucked = true;
+        this.gameObject.layer = 8;
     }
 
     void Ground()
     {
+        this.gameObject.layer = 8;
         actBox.SetActive(true);
         barrelCollider.isTrigger = false;
     }
@@ -92,6 +94,8 @@ public class Radioactive_Behavior : MonoBehaviour
     void Thrown()
     {
         actBox.SetActive(false);
+
+        this.gameObject.layer = 7;
 
         barrelCollider.isTrigger = false;
 
@@ -128,7 +132,8 @@ public class Radioactive_Behavior : MonoBehaviour
 
     void Exploding()
     {
-       if(!explosionFirstLoop)
+        this.gameObject.layer = 8;
+        if (!explosionFirstLoop)
         {
             explosionFirstLoop = true;
             explosionBox.SetActive(true);
@@ -153,5 +158,13 @@ public class Radioactive_Behavior : MonoBehaviour
         currState = Radioactive_State.GROUND;
         this.gameObject.transform.position = originPos;
         this.GetComponent<Renderer>().enabled = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Hazard")
+        {
+            currState = Radioactive_State.EXPLODING;
+        }
     }
 }

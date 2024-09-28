@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_Detection_Field : MonoBehaviour
 {
     public GameObject parent;
+    public List<string> validTargets;
     public Basic_Enemy_Behavior behavior;
     public List<GameObject> objsInTrigger = new List<GameObject>();
 
@@ -27,16 +28,16 @@ public class Enemy_Detection_Field : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name == "Player" || collision.name == "NK")
+        if(validTargets.Contains(collision.name))
         {
             objsInTrigger.Add(collision.gameObject);
             behavior.chaseTarget = collision.gameObject;
-        } 
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.name == "Player" || collision.name == "NK")
+        if (validTargets.Contains(collision.name))
         {
             objsInTrigger.Remove(collision.gameObject);
         }

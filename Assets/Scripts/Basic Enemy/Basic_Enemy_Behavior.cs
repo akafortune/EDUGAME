@@ -13,7 +13,7 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         LOOKING,
         STUNNED
     }
-
+    
     public EnemyState enemyState;
     public EnemyState[] lockedInStates;
     public Transform[] waypoints;
@@ -199,16 +199,6 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             collisionInCharge = true;
         }
 
-
-        if (collision.gameObject.name == "Player" )
-        {
-            if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
-            {
-                Player_Movement.playerState = Player_Movement.MovementStates.HIT;
-                collision.gameObject.GetComponent<Player_Movement>().hitPos = this.gameObject.transform.position;
-                enemyState = EnemyState.PATROLLING;
-            }
-        }
 
         if(collision.gameObject.name == "NK")
         {
