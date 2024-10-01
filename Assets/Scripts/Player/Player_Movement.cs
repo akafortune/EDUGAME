@@ -45,9 +45,12 @@ public class Player_Movement : MonoBehaviour
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
 
+    public Animator anim;
+
     private void Start()
     {
         collisionBox = this.gameObject.GetComponent<BoxCollider2D>();
+        anim = this.gameObject.GetComponent<Animator>();
     }
     public DoorTransitions playerTransition = DoorTransitions.NoTransition;
 
@@ -192,36 +195,51 @@ public class Player_Movement : MonoBehaviour
 
     void MovementCheck(float x, float y)
     {
-        if( x <  0 )
+        
+        if ( x <  0 )
         {
             x = -1;
             facing[0] = Directions.LEFT;
+            //anim.SetFloat("moveX", x);
+            //anim.SetFloat("moveY", 0);
+
         } else if (x > 0)
         {
             x = 1;
             facing[0] = Directions.RIGHT;
+            //anim.SetFloat("moveX", x);
+            //anim.SetFloat("moveY", 0);
+
         } else 
         { 
             x = 0;
             facing[0] = Directions.NONE;
+            
         }
+        
 
         if (y < 0)
         {
             y = -1;
             facing[1] = Directions.DOWN;
+            //anim.SetFloat("moveY", y);
+            //anim.SetFloat("moveX", 0);
         }
         else if (y > 0)
         {
             y = 1;
             facing[1] = Directions.UP;
+           // anim.SetFloat("moveY", y);
+            //anim.SetFloat("moveX", 0);
         }
         else
         {
             y = 0;
             facing[1] = Directions.NONE;
-        } 
+            
+        }
 
+        
         
         Vector3 movePos = new Vector3(x * Time.deltaTime, y * Time.deltaTime, 0).normalized;
         this.gameObject.transform.position += movePos * speed;
@@ -229,9 +247,16 @@ public class Player_Movement : MonoBehaviour
         if(x == 0 && y == 0)
         {
             playerState = MovementStates.STANDING;
+            anim.SetBool("Walking", false);
+            anim.SetFloat("moveX", x);
+            anim.SetFloat("moveY", y);
+
         } else
         {
             playerState = MovementStates.MOVING;
+            anim.SetBool("Walking", true);
+            anim.SetFloat("moveX", x);
+            anim.SetFloat("moveY", y);
         }
         
     }
