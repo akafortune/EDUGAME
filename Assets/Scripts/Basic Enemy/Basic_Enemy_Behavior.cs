@@ -24,10 +24,13 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     public int nextWaypoint = 0;
     public bool lockedIn, otherInRange, collisionInCharge;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyState = EnemyState.PATROLLING;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
