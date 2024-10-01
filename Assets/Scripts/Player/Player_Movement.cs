@@ -71,6 +71,8 @@ public class Player_Movement : MonoBehaviour
             
             lastPressed = PressCheck();
 
+            setAnimationDirection();
+
             if (!carrying)
             {
                 if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
@@ -85,6 +87,8 @@ public class Player_Movement : MonoBehaviour
                 }
             }
         }
+
+        
 
         if (playerState == MovementStates.STUNNING)
         {
@@ -104,6 +108,7 @@ public class Player_Movement : MonoBehaviour
             if (Roll())  //Roll returns a bool determining if the player is done rolling (determined via a timer)
             {
                 restand = true;
+                anim.SetTrigger("EndRollTrigger"); //triggers the stand up animation
                 this.gameObject.layer = 8;
             }
         }
@@ -112,6 +117,7 @@ public class Player_Movement : MonoBehaviour
         {
             intangible = false;
             restandTimer += Time.deltaTime;
+            
 
             if (restandTimer > restandTime)
             {
@@ -142,7 +148,36 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    void SetReelPos()
+    void setAnimationDirection()
+    {
+        if (lastPressed == Directions.RIGHT)
+        {
+            anim.SetFloat("moveX", 1);
+            anim.SetFloat("moveY", 0);
+        }
+        if (lastPressed == Directions.LEFT)
+        {
+            anim.SetFloat("moveX", -1);
+            anim.SetFloat("moveY", 0);
+        }
+        if (lastPressed == Directions.UP)
+        {
+            anim.SetFloat("moveY", 1);
+            anim.SetFloat("moveX", 0);
+        }
+        if (lastPressed == Directions.DOWN)
+        {
+            anim.SetFloat("moveY", -1);
+            anim.SetFloat("moveX", 0);
+        }
+        if (lastPressed == Directions.NONE)
+        {
+            anim.SetFloat("moveY", 0);
+            anim.SetFloat("moveX", 0);
+        }
+    }
+
+        void SetReelPos()
     {
         float x = 0, y = 0;
 
@@ -184,7 +219,7 @@ public class Player_Movement : MonoBehaviour
         this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, reelTarget, reelSpeed * Time.deltaTime);
 
         downTimer += Time.deltaTime;
-
+        anim.SetTrigger("HurtTrigger");
         if(downTimer > downTime)
         {
             downTimer = 0;
@@ -201,15 +236,15 @@ public class Player_Movement : MonoBehaviour
         {
             x = -1;
             facing[0] = Directions.LEFT;
-            anim.SetFloat("moveX", x);
-            anim.SetFloat("moveY", 0);
+            //anim.SetFloat("moveX", x);
+            //anim.SetFloat("moveY", 0);
 
         } else if (x > 0)
         {
             x = 1;
             facing[0] = Directions.RIGHT;
-            anim.SetFloat("moveX", x);
-            anim.SetFloat("moveY", 0);
+           // anim.SetFloat("moveX", x);
+            //anim.SetFloat("moveY", 0);
 
         } else 
         { 
@@ -223,15 +258,15 @@ public class Player_Movement : MonoBehaviour
         {
             y = -1;
             facing[1] = Directions.DOWN;
-            anim.SetFloat("moveY", y);
-            anim.SetFloat("moveX", 0);
+           // anim.SetFloat("moveY", y);
+            //anim.SetFloat("moveX", 0);
         }
         else if (y > 0)
         {
             y = 1;
             facing[1] = Directions.UP;
-            anim.SetFloat("moveY", y);
-            anim.SetFloat("moveX", 0);
+            //anim.SetFloat("moveY", y);
+            //anim.SetFloat("moveX", 0);
         }
         else
         {
@@ -294,6 +329,8 @@ public class Player_Movement : MonoBehaviour
         }
 
         rollTarget = gameObject.transform.position + new Vector3(x * rollDist, y * rollDist, 0).normalized * rollDist;
+
+        anim.SetTrigger("RollTrigger");
         
     }
 
@@ -302,6 +339,7 @@ public class Player_Movement : MonoBehaviour
         rollTimer += Time.deltaTime;
         this.transform.position = Vector3.MoveTowards(this.transform.position, rollTarget, rollSpeed * Time.deltaTime);
         this.gameObject.layer = 7;
+        
 
         if(rollTimer > rollTime)
         {
