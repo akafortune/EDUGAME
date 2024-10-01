@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5129227486323182790}
   - component: {fileID: 2473335448304609550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stun Box
   m_TagString: Stun
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 599939535189221357}
   - component: {fileID: 6636459056524222634}
   - component: {fileID: 793744312898908374}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -259,27 +259,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facing: 0000000000000000
   lastPressed: 0
-  inactionableStates: 
+  inactionableStates: 0200000003000000040000000500000006000000
   rollTarget: {x: 0, y: 0, z: 0}
   hitPos: {x: 0, y: 0, z: 0}
   reelTarget: {x: 0, y: 0, z: 0}
+  carryPos: {fileID: 0}
   restand: 0
   actionable: 0
   intangible: 0
+  carrying: 0
   reeled: 0
   stunBox: {fileID: 2702760551358043340}
+  carryingItem: {fileID: 0}
   speed: 0.03
   rollDist: 4
-  reelSpeed: 0
-  reelDist: 0
+  reelSpeed: 15
+  reelDist: 2
   stunDist: 1
   rollSpeed: 15
   restandTime: 0.1
   rollTime: 0.4
   swingTime: 0.5
-  downTime: 0
-  intangibleTime: 0
-  hitPosLenience: 0
+  downTime: 0.5
+  intangibleTime: 1
+  hitPosLenience: 0.2
   playerTransition: 0
 --- !u!95 &793744312898908374
 Animator:
