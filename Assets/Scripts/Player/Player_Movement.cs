@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Basic_Enemy_Behavior;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -37,8 +38,9 @@ public class Player_Movement : MonoBehaviour
     public MovementStates[] inactionableStates;
     public static MovementStates playerState;
     public Vector3 rollTarget, hitPos, reelTarget;
-    public bool restand, actionable, intangible, reeled = false;
-    public GameObject stunBox;
+    public Transform carryPos;
+    public bool restand, actionable, intangible, carrying, reeled = false;
+    public GameObject stunBox, carryingItem;
     private BoxCollider2D collisionBox;
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
@@ -64,19 +66,20 @@ public class Player_Movement : MonoBehaviour
         {
             MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));  //Execute Player Movement
             lastPressed = PressCheck();
-            
-            if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
-            {
-                playerState = MovementStates.ROLLING;
-                SetRollDir();
-            }
 
-            if(Input.GetAxis("Stun") > 0)
+            if (!carrying)
             {
-                Stun();
-            }
+                if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
+                {
+                    playerState = MovementStates.ROLLING;
+                    SetRollDir();
+                }
 
-            
+                if (Input.GetAxis("Stun") > 0)
+                {
+                    Stun();
+                }
+            }
         }
 
         if (playerState == MovementStates.STUNNING)
@@ -97,6 +100,7 @@ public class Player_Movement : MonoBehaviour
             if (Roll())  //Roll returns a bool determining if the player is done rolling (determined via a timer)
             {
                 restand = true;
+                this.gameObject.layer = 8;
             }
         }
 
@@ -123,6 +127,14 @@ public class Player_Movement : MonoBehaviour
             }
             stunBox.SetActive(false);
             Hit();
+        }
+
+        if(carryingItem != null)
+        {
+            if (carryingItem.GetComponent<Radioactive_Behavior>().currState == Radioactive_Behavior.Radioactive_State.EXPLODING)
+            {
+                carrying = false;
+            }
         }
     }
 
@@ -265,6 +277,7 @@ public class Player_Movement : MonoBehaviour
     {
         rollTimer += Time.deltaTime;
         this.transform.position = Vector3.MoveTowards(this.transform.position, rollTarget, rollSpeed * Time.deltaTime);
+        this.gameObject.layer = 7;
 
         if(rollTimer > rollTime)
         {
@@ -359,6 +372,19 @@ public class Player_Movement : MonoBehaviour
         else
         {
             print("Wrong String: " + t);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Hazard")
+        {
+            if (!intangible)
+            {
+                playerState = Player_Movement.MovementStates.HIT;
+                hitPos = collision.gameObject.transform.position;
+            }
         }
     }
 }
