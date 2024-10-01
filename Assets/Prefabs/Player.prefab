@@ -84,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6275155612445919629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5925618637838773857}
+  m_Layer: 8
+  m_Name: CarryTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5925618637838773857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6275155612445919629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1487037323709038764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6698335393169907538
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +150,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5129227486323182790}
+  - {fileID: 5925618637838773857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4740948869451126660
@@ -263,7 +295,7 @@ MonoBehaviour:
   rollTarget: {x: 0, y: 0, z: 0}
   hitPos: {x: 0, y: 0, z: 0}
   reelTarget: {x: 0, y: 0, z: 0}
-  carryPos: {fileID: 0}
+  carryPos: {fileID: 5925618637838773857}
   restand: 0
   actionable: 0
   intangible: 0
@@ -283,6 +315,7 @@ MonoBehaviour:
   downTime: 0.5
   intangibleTime: 1
   hitPosLenience: 0.2
+  anim: {fileID: 0}
   playerTransition: 0
 --- !u!95 &793744312898908374
 Animator:

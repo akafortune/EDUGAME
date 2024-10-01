@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe588867b98109348a090c887589b596
+guid: b0e43926c5ce0c9439fd6b1b58b7042c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Radioactive Material-Sheet_0
+      name: Radioactive Material-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c28964ecf3bd73c48b287ae5076d1109
-      internalID: 310927203
+      spriteID: 6c79761a59101e943832f391087af47c
+      internalID: 430543532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Radioactive Material-Sheet_1
+      name: Radioactive Material-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 0
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2077aa6bef3831b46a941f7a55bb16de
-      internalID: 1363939295
+      spriteID: 56e45595411571744be0c6c1092dbce0
+      internalID: -349661615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Radioactive Material-Sheet_2
+      name: Radioactive Material-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 160
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab578763713df094aa9b26a90d475423
-      internalID: 2094194911
+      spriteID: a8eafaca5954a0543a73d14f7ee36f52
+      internalID: -1203305457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Radioactive Material-Sheet_3
+      name: Radioactive Material-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 320
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a9d897b65871784aab57f97858ec745
-      internalID: 1095677830
+      spriteID: 5e7557123a485f145864b2afc0ae1a15
+      internalID: 2037478175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Radioactive Material-Sheet_4
+      name: Radioactive Material-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 480
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 855c8ad4f20296947a0d11503689732c
-      internalID: -128000833
+      spriteID: 5bbdc302815b183409271ec3481e73b1
+      internalID: 1433934277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Radioactive Material-Sheet_5
+      name: Radioactive Material-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 640
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ede6484038df0384aa6f4d17c0365351
-      internalID: 580283299
+      spriteID: ee98c56be920cd5438e4741be2f31fc1
+      internalID: 1637585601
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Radioactive Material-Sheet_0: 310927203
-      Radioactive Material-Sheet_1: 1363939295
-      Radioactive Material-Sheet_2: 2094194911
-      Radioactive Material-Sheet_3: 1095677830
-      Radioactive Material-Sheet_4: -128000833
-      Radioactive Material-Sheet_5: 580283299
+      Radioactive Material-Sheet 1_0: 430543532
+      Radioactive Material-Sheet 1_1: -349661615
+      Radioactive Material-Sheet 1_2: -1203305457
+      Radioactive Material-Sheet 1_3: 2037478175
+      Radioactive Material-Sheet 1_4: 1433934277
+      Radioactive Material-Sheet 1_5: 1637585601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

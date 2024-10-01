@@ -21,12 +21,16 @@ public class Radioactive_Behavior : MonoBehaviour
     public float throwTime, throwDist, scaleValue, decayTime, explosionTime;
     private float throwTimer = 0, decayTimer = 0, explosionTimer = 0;
     private bool rise = true, plucked = false, explosionFirstLoop = false;
+
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         trueScale = this.gameObject.transform.localScale;
         originPos = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -137,7 +141,7 @@ public class Radioactive_Behavior : MonoBehaviour
         {
             explosionFirstLoop = true;
             explosionBox.SetActive(true);
-            this.GetComponent<Renderer>().enabled = false;
+            animator.SetTrigger("explode");
         }
 
         explosionTimer += Time.deltaTime;
@@ -157,6 +161,7 @@ public class Radioactive_Behavior : MonoBehaviour
         plucked = false;
         currState = Radioactive_State.GROUND;
         this.gameObject.transform.position = originPos;
+        animator.SetTrigger("Default");
         this.GetComponent<Renderer>().enabled = true;
     }
 
