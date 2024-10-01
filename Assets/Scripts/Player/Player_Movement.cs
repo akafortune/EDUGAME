@@ -68,6 +68,7 @@ public class Player_Movement : MonoBehaviour
         if(actionable)
         {
             MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));  //Execute Player Movement
+            
             lastPressed = PressCheck();
 
             if (!carrying)
@@ -200,15 +201,15 @@ public class Player_Movement : MonoBehaviour
         {
             x = -1;
             facing[0] = Directions.LEFT;
-            //anim.SetFloat("moveX", x);
-            //anim.SetFloat("moveY", 0);
+            anim.SetFloat("moveX", x);
+            anim.SetFloat("moveY", 0);
 
         } else if (x > 0)
         {
             x = 1;
             facing[0] = Directions.RIGHT;
-            //anim.SetFloat("moveX", x);
-            //anim.SetFloat("moveY", 0);
+            anim.SetFloat("moveX", x);
+            anim.SetFloat("moveY", 0);
 
         } else 
         { 
@@ -222,15 +223,15 @@ public class Player_Movement : MonoBehaviour
         {
             y = -1;
             facing[1] = Directions.DOWN;
-            //anim.SetFloat("moveY", y);
-            //anim.SetFloat("moveX", 0);
+            anim.SetFloat("moveY", y);
+            anim.SetFloat("moveX", 0);
         }
         else if (y > 0)
         {
             y = 1;
             facing[1] = Directions.UP;
-           // anim.SetFloat("moveY", y);
-            //anim.SetFloat("moveX", 0);
+            anim.SetFloat("moveY", y);
+            anim.SetFloat("moveX", 0);
         }
         else
         {
@@ -248,15 +249,13 @@ public class Player_Movement : MonoBehaviour
         {
             playerState = MovementStates.STANDING;
             anim.SetBool("Walking", false);
-            anim.SetFloat("moveX", x);
-            anim.SetFloat("moveY", y);
+            
 
         } else
         {
             playerState = MovementStates.MOVING;
             anim.SetBool("Walking", true);
-            anim.SetFloat("moveX", x);
-            anim.SetFloat("moveY", y);
+            
         }
         
     }
