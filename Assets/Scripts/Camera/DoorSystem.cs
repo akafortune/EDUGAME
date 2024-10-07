@@ -12,6 +12,7 @@ public class DoorSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>();
         speed = 0.02f;
         doorTouched = false;
     }
@@ -22,7 +23,7 @@ public class DoorSystem : MonoBehaviour
         // when the player reaches a door to move through to the next
         if (doorTouched && pm.playerTransition == Player_Movement.DoorTransitions.Transitioning)
         {
-            MovePlayer();
+            //MovePlayer();
             print("Player is moving");
         }
         // when the player reaches the next door

@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98f3df8671aaa64ebc8cd194c56970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 1041398443}
+  pm: {fileID: 0}
   nextDoor: {fileID: 965117375}
   speed: 0
   doorTouched: 0
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98f3df8671aaa64ebc8cd194c56970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 1041398443}
+  pm: {fileID: 0}
   nextDoor: {fileID: 118542301}
   speed: 0
   doorTouched: 0
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98f3df8671aaa64ebc8cd194c56970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 1041398443}
+  pm: {fileID: 0}
   nextDoor: {fileID: 1911314856}
   speed: 0
   doorTouched: 0
@@ -1720,17 +1720,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
   m_PrefabInstance: {fileID: 5335601952513864323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1041398443 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6636459056524222634, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
-  m_PrefabInstance: {fileID: 5335601952513864323}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700347fc174c37e478e5ad907523e18a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1138561087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,7 +3018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98f3df8671aaa64ebc8cd194c56970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pm: {fileID: 1041398443}
+  pm: {fileID: 0}
   nextDoor: {fileID: 993161668}
   speed: 0
   doorTouched: 0
