@@ -44,7 +44,7 @@ public class SettingsManager : MonoBehaviour
             Screen.SetResolution(res.width, res.height, Screen.fullScreen);
         }
     }
-    public void init()
+    public void Init()
     {
         CheckMusic();
 
@@ -63,7 +63,6 @@ public class SettingsManager : MonoBehaviour
     void Start()
     {
         codeChange = true;
-        
         
         resolutions = Screen.resolutions;
         int buffer = -1;
