@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1895983427101871841}
   - component: {fileID: 2818028884930956096}
   - component: {fileID: 4621086140222716651}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 1211044093059315077}
   - component: {fileID: 3177534469690784291}
   - component: {fileID: 1487038148705885641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   - component: {fileID: 6134156825535798925}
   - component: {fileID: 6199805236803721827}
   - component: {fileID: 4180581873238584575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 6206229081256574753}
   - component: {fileID: 7439718791629964027}
   - component: {fileID: 3616541168498517836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 2743586098474001368}
   - component: {fileID: 5241887071277943154}
   - component: {fileID: 4899125027167891985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1632,7 +1632,7 @@ GameObject:
   - component: {fileID: 7706303039033547915}
   - component: {fileID: 4717554260851685280}
   - component: {fileID: 5111617476820580230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 5242840610615499458}
   - component: {fileID: 7061674481483214679}
   - component: {fileID: 3340776895625214069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2859,7 +2859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5223887386042386637}
   m_Layer: 0
-  m_Name: BasicRoom
+  m_Name: 4 Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3049,7 +3049,7 @@ GameObject:
   - component: {fileID: 7531945872627765677}
   - component: {fileID: 5556151624333901108}
   - component: {fileID: 592944325745902078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

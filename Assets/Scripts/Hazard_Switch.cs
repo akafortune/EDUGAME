@@ -35,6 +35,7 @@ public class Hazard_Switch : MonoBehaviour
     {
         if(collision.gameObject.tag == "Stun")
         {
+            Debug.Log("ran");
             if (!timed)
             {
                 Hazard.SetActive(!Hazard.activeInHierarchy);

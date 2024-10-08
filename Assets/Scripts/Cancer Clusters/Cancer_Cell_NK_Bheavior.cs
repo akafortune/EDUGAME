@@ -60,4 +60,6 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
         wall.GetComponent<BoxCollider2D>().isTrigger = true;
         wall.GetComponent<SpriteRenderer>().enabled = false;
     }
+
+    
 }

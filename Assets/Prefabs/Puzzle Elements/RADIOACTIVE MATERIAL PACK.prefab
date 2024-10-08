@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 6011160514855445108}
   m_Layer: 8
   m_Name: RADIOACTIVE MATERIAL PACK
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 280464966476868493}
   m_Layer: 8
   m_Name: ExplosionBox
-  m_TagString: Hazard
+  m_TagString: Radioactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,8 +194,8 @@ Transform:
   m_GameObject: {fileID: 7719360455051759226}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 3.6317801, y: 5.890624, z: 3}
+  m_LocalPosition: {x: 0, y: 1.02, z: -0}
+  m_LocalScale: {x: 5.2660813, y: 5.890624, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7364363052557673501}
@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -295,7 +295,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0218887, y: 1.0310729}
   m_EdgeRadius: 0
 --- !u!1 &8797440969418054700
 GameObject:
@@ -409,7 +409,7 @@ MonoBehaviour:
   throwTime: 0.5
   throwDist: 15
   scaleValue: 2
-  decayTime: 2
+  decayTime: 10
   explosionTime: 1
   animator: {fileID: 0}
 --- !u!61 &1411506544213394519

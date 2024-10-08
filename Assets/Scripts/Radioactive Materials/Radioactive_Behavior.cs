@@ -167,7 +167,12 @@ public class Radioactive_Behavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Hazard")
+        if(collision.gameObject.tag == "Hazard" && currState == Radioactive_State.GROUND)
+        {
+            currState = Radioactive_State.EXPLODING;
+        }
+
+        if (collision.gameObject.tag == "Cancer")
         {
             currState = Radioactive_State.EXPLODING;
         }
