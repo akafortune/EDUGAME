@@ -44,20 +44,24 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             if (otherInRange)
             {
                 enemyState = EnemyState.CHASING;
+                anim.SetBool("isIdle", false);
             }
 
             if (enemyState == EnemyState.PATROLLING)
             {
                 Patrol();
+                anim.SetBool("isIdle", true);
             }
 
             if (enemyState == EnemyState.CHASING)
             {
                 Chase();
+                anim.SetBool("isIdle", false);
             }
             if (enemyState == EnemyState.LOOKING)
             {
                 Look();
+                anim.SetBool("isIdle", true);
             }
 
         }

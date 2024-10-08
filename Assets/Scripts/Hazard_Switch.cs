@@ -10,6 +10,10 @@ public class Hazard_Switch : MonoBehaviour
     public float downTime;
     private float downTimer = 0;
 
+    public SpriteRenderer spriteRender;
+    public Sprite switchOn;
+    public Sprite switchOff;
+
 
     private void Update()
     {
