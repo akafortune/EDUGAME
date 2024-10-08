@@ -60,4 +60,12 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
         wall.GetComponent<BoxCollider2D>().isTrigger = true;
         wall.GetComponent<SpriteRenderer>().enabled = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Radioactive" && currState == CancerClusterState.ALIVE)
+        {
+            currState = CancerClusterState.BREAKING_DOWN;
+        }
+    }
 }
