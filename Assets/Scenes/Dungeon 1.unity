@@ -1064,6 +1064,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6636459056524222634, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6698335393169907538, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1415,7 +1419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4475930144951878972, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5223887386042386637, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1495,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 1144052177}
     - target: {fileID: 6448409041492608761, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 7.77
+      value: 6.93
       objectReference: {fileID: 0}
     - target: {fileID: 6544030344530635296, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Name
@@ -2919,7 +2923,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.77
+  orthographic size: 6.93
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5183,19 +5187,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6851579237140070574, guid: 12056713f4051f2448af692040d89dfa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -12.805054
+      value: -12.9967575
       objectReference: {fileID: 0}
     - target: {fileID: 6851579237140070574, guid: 12056713f4051f2448af692040d89dfa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -27.958181
+      value: -28.341585
       objectReference: {fileID: 0}
     - target: {fileID: 6851579237140070574, guid: 12056713f4051f2448af692040d89dfa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 6.075391
+      value: 6.2670927
       objectReference: {fileID: 0}
     - target: {fileID: 6851579237140070574, guid: 12056713f4051f2448af692040d89dfa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -28.012924
+      value: -28.396328
       objectReference: {fileID: 0}
     - target: {fileID: 6851579237140070574, guid: 12056713f4051f2448af692040d89dfa, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
@@ -6508,15 +6512,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3648360170934015836, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 2.7936363
+      value: 3.08119
       objectReference: {fileID: 0}
     - target: {fileID: 3648360170934015836, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -11.622839
+      value: -11.910391
       objectReference: {fileID: 0}
     - target: {fileID: 3648360170934015836, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 2.9101167
+      value: 3.1976705
       objectReference: {fileID: 0}
     - target: {fileID: 3648360170934015836, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
@@ -6624,7 +6628,7 @@ PrefabInstance:
       objectReference: {fileID: 1144052177}
     - target: {fileID: 6448409041492608761, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 6
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6544030344530635296, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_Name
@@ -6632,11 +6636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6664239096054954313, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2073665
+      value: -1.8573668
       objectReference: {fileID: 0}
     - target: {fileID: 6664239096054954313, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.73
+      value: 31.519999
       objectReference: {fileID: 0}
     - target: {fileID: 7531945872627765677, guid: f6e18925023bd484ea007a4f09bef07d, type: 3}
       propertyPath: m_LocalPosition.x

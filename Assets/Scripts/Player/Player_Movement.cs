@@ -282,7 +282,7 @@ public class Player_Movement : MonoBehaviour
 
         
         
-        Vector3 movePos = new Vector3(x * Time.deltaTime, y * Time.deltaTime, 0).normalized;
+        Vector3 movePos = new Vector3(x * Time.deltaTime, y * Time.deltaTime, 0)/*.normalized*/;
         this.gameObject.transform.position += movePos * speed;
         
         if(x == 0 && y == 0)
