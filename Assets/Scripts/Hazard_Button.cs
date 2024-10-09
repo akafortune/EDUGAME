@@ -5,17 +5,12 @@ using UnityEngine;
 public class Hazard_Button : MonoBehaviour
 {
     public GameObject hazard;
-    public SpriteRenderer buttonRender;
-
-    public Sprite buttonOn;
-    public Sprite buttonOff;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
             hazard.SetActive(false);
-            buttonRender.sprite = buttonOff;
         }
     }
 
@@ -24,7 +19,6 @@ public class Hazard_Button : MonoBehaviour
         if (collision.tag == "Player")
         {
             hazard.SetActive(true);
-            buttonRender.sprite = buttonOn;
         }
     }
 }
