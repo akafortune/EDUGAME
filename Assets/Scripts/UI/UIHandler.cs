@@ -28,8 +28,5 @@ public class UIHandler : MonoBehaviour
         SettingsMenu.SetActive(!SettingsMenu.activeSelf);
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+    
 }

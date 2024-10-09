@@ -47,10 +47,14 @@ public class Player_Movement : MonoBehaviour
 
     public Animator anim;
 
+    private AudioSource source;
+    public AudioClip reelSound;
+    public AudioClip stunSound;
     private void Start()
     {
         collisionBox = this.gameObject.GetComponent<BoxCollider2D>();
         anim = this.gameObject.GetComponent<Animator>();
+        source = this.gameObject.GetComponent<AudioSource>();
     }
     public DoorTransitions playerTransition = DoorTransitions.NoTransition;
 
@@ -179,6 +183,7 @@ public class Player_Movement : MonoBehaviour
 
         void SetReelPos()
     {
+        source.PlayOneShot(reelSound);
         float x = 0, y = 0;
 
         if (hitPos.x > this.gameObject.transform.position.x + hitPosLenience)
@@ -386,6 +391,7 @@ public class Player_Movement : MonoBehaviour
 
     public void Stun()
     {
+        source.PlayOneShot(stunSound);
         playerState = MovementStates.STUNNING;
 
         int x = 0, y = 0;

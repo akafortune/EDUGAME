@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Hazard_Switch : MonoBehaviour
@@ -14,14 +15,19 @@ public class Hazard_Switch : MonoBehaviour
     public Sprite switchOn;
     public Sprite switchOff;
 
-
+    private AudioSource source;
+    public AudioClip sfx;
+    private void Start()
+    {
+        source = gameObject.GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if(downed)
         {
             Hazard.SetActive(false);
             downTimer += Time.deltaTime;
-
+            
             if(downTimer >= downTime)
             {
                 downTimer = 0;
@@ -36,6 +42,7 @@ public class Hazard_Switch : MonoBehaviour
         if(collision.gameObject.tag == "Stun")
         {
             Debug.Log("ran");
+            source.PlayOneShot(sfx);
             if (!timed)
             {
                 Hazard.SetActive(!Hazard.activeInHierarchy);

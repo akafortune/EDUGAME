@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Cancer_Cell_NK_Bheavior : MonoBehaviour
 {
+    private AudioSource source;
+
+    public AudioClip unlock;
     public enum CancerClusterState
     {
         ALIVE,
@@ -18,6 +21,7 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        source = this.gameObject.GetComponent<AudioSource>();
         currState = CancerClusterState.ALIVE;
     }
 
@@ -46,6 +50,7 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
 
     void BreakingDown()
     {
+        source.PlayOneShot(unlock);
         breakdownTimer += Time.deltaTime;
 
         if(breakdownTimer> breakdownTime)

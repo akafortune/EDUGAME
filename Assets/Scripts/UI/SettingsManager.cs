@@ -174,7 +174,10 @@ public class SettingsManager : MonoBehaviour
             SetMasterVolume();
         }
     }
-    
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     
     
     // Update is called once per frame
