@@ -11,6 +11,8 @@ public class DialougeSystem : MonoBehaviour
     public TextMeshProUGUI nameBox;
 
     //Text Variables
+    GameObject player;
+    Collider2D playerCol;
     private List<string>[] rooms = new List<string>[5];
     private float textSpeed = 0.006f;
     private int index;
@@ -21,66 +23,29 @@ public class DialougeSystem : MonoBehaviour
     void Start()
     {
         //gameObject.SetActive(false);
-        //GameObject player = GameObject.Find("Player");
+        player = GameObject.Find("Player");
+        playerCol = playerCol.GetComponent<BoxCollider2D>();
         textBox.text = string.Empty;
         ReadTextFile();
         index = 0;
 
-        StartCoroutine(DisplayText(0));
+        //StartCoroutine(DisplayText(0));
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
         //Checks tile for dialouge trigger based on room
-        if(player.CompareTag("Room1"))
+        //if(playerCol.OverlapCollider)
         {
             //Player_Movement.MovementStates.ACTING;
-            //gameObject.SetActive(true)
+            gameObject.SetActive(true);
             //Pop open Window animation
             roomNum = 1;
-            //StartCoroutine(DisplayText(roomNum));
+            StartCoroutine(DisplayText(roomNum));
         }
 
-        else if (player.CompareTag("Room2"))
-        {
-            //Player_Movement.MovementStates.ACTING;
-            //gameObject.SetActive(true)
-            //Pop open Window animation
-            roomNum = 2;
-            //StartCoroutine(DisplayText(roomNum));
-        }
-
-        else if (player.CompareTag("Room3"))
-        {
-            //Player_Movement.MovementStates.ACTING;
-            //gameObject.SetActive(true)
-            //Pop open Window animation
-            roomNum = 3;
-            //StartCoroutine(DisplayText(roomNum));
-        }
-
-        else if (player.CompareTag("Room4"))
-        {
-            //Player_Movement.MovementStates.ACTING;
-            //gameObject.SetActive(true)
-            //Pop open Window animation
-            roomNum = 4;
-            //StartCoroutine(DisplayText(roomNum));
-        }
-
-        else if (player.CompareTag("Room5"))
-        {
-            //Player_Movement.MovementStates.ACTING;
-            //gameObject.SetActive(true)
-            //Pop open Window animation
-            roomNum = 5;
-            //StartCoroutine(DisplayText(roomNum));
-        }
-        */
-
-        //Mouse Click for Dialouge Progression
+        //Mouse/Space Bar Click for Dialouge Progression
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && gameObject.activeSelf)
         {
             if (textBox.text == text)
@@ -181,4 +146,6 @@ public class DialougeSystem : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+
 }
