@@ -303,7 +303,7 @@ MonoBehaviour:
   reeled: 0
   stunBox: {fileID: 2702760551358043340}
   carryingItem: {fileID: 0}
-  speed: 0.03
+  speed: 0.06
   rollDist: 4
   reelSpeed: 15
   reelDist: 2

@@ -214,7 +214,7 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     {
         if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
         {
-            collision.gameObject.GetComponent<HealthSystem>().OnHit(1);
+            //collision.gameObject.GetComponent<HealthSystem>().OnHit(1);
         }
     }
 }
