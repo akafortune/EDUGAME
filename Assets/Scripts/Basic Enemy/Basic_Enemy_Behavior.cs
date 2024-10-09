@@ -24,10 +24,13 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     public int nextWaypoint = 0;
     public bool lockedIn, otherInRange, collisionInCharge;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyState = EnemyState.PATROLLING;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,20 +44,24 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             if (otherInRange)
             {
                 enemyState = EnemyState.CHASING;
+                anim.SetBool("isIdle", false);
             }
 
             if (enemyState == EnemyState.PATROLLING)
             {
                 Patrol();
+                anim.SetBool("isIdle", true);
             }
 
             if (enemyState == EnemyState.CHASING)
             {
                 Chase();
+                anim.SetBool("isIdle", false);
             }
             if (enemyState == EnemyState.LOOKING)
             {
                 Look();
+                anim.SetBool("isIdle", true);
             }
 
         }
