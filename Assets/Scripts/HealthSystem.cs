@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour
 {
     public float health;
     public float maxHealth;
-    float timeTillRespawn;
+    public float timeTillRespawn;
     public float countDown;
     public bool hasDied;
 
@@ -17,7 +17,7 @@ public class HealthSystem : MonoBehaviour
         //maxHealth = 5;
         health = maxHealth;
         hasDied = false;
-        if(timeTillRespawn == 0) { timeTillRespawn = 3f; }
+        if(timeTillRespawn == 0) { timeTillRespawn = 2.5f; }
         countDown = timeTillRespawn;
     }
 
@@ -30,7 +30,7 @@ public class HealthSystem : MonoBehaviour
             print(gameObject.name + " has perished");
             KillPlayer();
         }
-        if(hasDied)
+        if(hasDied && this.gameObject.name.Equals("Player"))
         {
             // starts the respawn timer
             countDown -= Time.deltaTime;
@@ -62,15 +62,24 @@ public class HealthSystem : MonoBehaviour
     // deletes the player and starts a timer to trigger respawn
     public void KillPlayer()
     {
-        this.GetComponent<SpriteRenderer>().enabled = false;
-        hasDied = true;
+        // player will go temporarily invisible
+        if (this.name.Equals("Player"))
+        {
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            hasDied = true;
+        }
+        //enemies will dies
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     // respawns the player at the correct respawn point
     public void RespawnPlayer()
     {
         //this.transform.position = door respawn position
-        OnHeal((int)(maxHealth/2)); // healing up to half of the health
+        OnHeal((int)(maxHealth/2) + 1); // healing up to half of the health
         hasDied = false;
         countDown = timeTillRespawn;
         this.GetComponent<SpriteRenderer>().enabled = true;
