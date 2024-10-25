@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Quiz_System : MonoBehaviour
 {
     [Header("Answer Tile Injection")]
     public List<GameObject> answerTiles;
 
+    [Header("Dialogue Box Info")]
+    public GameObject dialogueBox;
+    public TextMeshProUGUI characterName;
+    public TextMeshProUGUI questionText;
+    private int dialogueIndex = 0;
+    private bool inDialogue = false;
+
     [Header("Questions and Answers")]
-    public List<List<string>> possibleAnswers = new List<List<string>>();
-    public List<string> q1Answers, q2Answers, q3Answers;
-    public List<string> correctAnswers;
+    public QuestionAtlas[] quizSheet;
     public string playerAnswer;
 
     [Header("Timer Values")]
@@ -20,12 +26,11 @@ public class Quiz_System : MonoBehaviour
     private int numberCorrect, questionIndex = 0;
 
     public bool roundOn = false;
+    private bool previousCorrect;
+    private List<string> dialogue = new List<string>();
     // Start is called before the first frame update
     void Start()
     {
-        possibleAnswers.Add(q1Answers);
-        possibleAnswers.Add(q2Answers);
-        possibleAnswers.Add(q3Answers);
         
     }
 
@@ -36,14 +41,103 @@ public class Quiz_System : MonoBehaviour
         {
             Round();
         }
+
+        if (inDialogue)
+        {
+            DialogueController();
+        }
+    }
+
+    void DialogueController()
+    {
+        if (Input.GetButtonDown("Stun"))
+        {
+            if(dialogueIndex < dialogue.Count - 1)
+            {
+                dialogueIndex++;
+            } else
+            {
+                inDialogue = false;
+                roundOn = true;
+                dialogueBox.SetActive(false);
+                Player_Movement.playerState = Player_Movement.MovementStates.STANDING;
+            }
+        }
+
+        questionText.text = dialogue[dialogueIndex];
+    }
+
+    void SetDialogue()
+    {
+        dialogueIndex = 0;
+        dialogue.Clear();
+
+        Player_Movement.playerState = Player_Movement.MovementStates.ACTING;
+
+        if (previousCorrect)
+        {
+            dialogue.Add("That's Correct!");
+            dialogue.Add("Now, on to the next question");
+        }
+        else if(questionIndex == 0)
+        {
+            dialogue.Add("Let's begin! Your first question is...");
+        }
+        else
+        {
+            dialogue.Add("Incorrect...");
+            dialogue.Add("Now, on to the next question");
+        }
+
+        
+        dialogue.Add(quizSheet[questionIndex].question);
+
+        dialogueBox.SetActive(true);
+        inDialogue = true;
+    }
+
+    void SetFinalDialogue()
+    {
+        dialogueIndex = 0;
+        dialogue.Clear();
+
+        Player_Movement.playerState = Player_Movement.MovementStates.ACTING;
+
+        if (previousCorrect)
+        {
+            dialogue.Add("That's Correct!");
+        }
+        else
+        {
+            dialogue.Add("Incorrect...");
+        }
+
+        dialogue.Add("The exam is now over, good job");
+        dialogue.Add("Your final score was " + numberCorrect.ToString() + " out of " + quizSheet.Length.ToString());
+
+        if(numberCorrect == 0 || numberCorrect == 1)
+        {
+            dialogue.Add("That's a pretty rough score, come back and try again sometime!");
+        } else if(numberCorrect == quizSheet.Length || numberCorrect == quizSheet.Length - 1)
+        {
+            dialogue.Add("Wonderful! It seems you've passed with flying colors");
+        } else
+        {
+            dialogue.Add("Pretty good, but you can always do better!");
+        }
+
+        dialogue.Add("Alright, now sit tight and wait for extraction");
+
+        dialogueBox.SetActive(true);
+        inDialogue = true;
+
     }
 
     public void PrepareField()
     {
-
-        for (int i = 0; i < possibleAnswers[questionIndex].Count; i++)
+        for (int i = 0; i < quizSheet[questionIndex].possibleAnswers.Length; i++)
         {
-            answerTiles[i].GetComponent<Answer_Tile>().currAnswer = possibleAnswers[questionIndex][i];
+            answerTiles[i].GetComponent<Answer_Tile>().currAnswer = quizSheet[questionIndex].possibleAnswers[i];
         }
 
         foreach (GameObject g in answerTiles)
@@ -54,7 +148,7 @@ public class Quiz_System : MonoBehaviour
             }
         }
 
-        roundOn = true;
+        SetDialogue();
     }
 
     void Round()
@@ -84,21 +178,35 @@ public class Quiz_System : MonoBehaviour
             tile.currAnswer = "";
         }
 
-        if (playerAnswer == correctAnswers[questionIndex])
+        if (playerAnswer == quizSheet[questionIndex].correctAnswer)
         {
             numberCorrect++;
+            previousCorrect = true;
+        } else
+        {
+            previousCorrect = false;
         }
 
-        playerAnswer = "";
+        //playerAnswer = "";
         questionIndex++;
 
         Debug.Log(numberCorrect);
 
-        if(questionIndex < possibleAnswers.Count)
+        if(questionIndex < quizSheet.Length)
         {
             PrepareField();
+        } else
+        {
+            SetFinalDialogue();
         }
     }
+}
+
+[System.Serializable]
+public class QuestionAtlas{
+    public string question;
+    public string correctAnswer;
+    public string[] possibleAnswers;
 }
 
 

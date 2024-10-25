@@ -10,6 +10,7 @@ public class Quiz_Start_Trigger : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             qs.PrepareField();
+            this.gameObject.SetActive(false);
         }
     }
 }

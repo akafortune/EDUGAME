@@ -13,6 +13,7 @@ public class Answer_Tile : MonoBehaviour
 
     [Header("Timer Values")]
     public static float autosubmitTime = 5;
+    public bool runAutoSubmit = false;
     private float autosubmitTimer = 0;
     // Start is called before the first frame update
     void Start()
@@ -24,29 +25,39 @@ public class Answer_Tile : MonoBehaviour
     void Update()
     {
         answerDisplay.text = currAnswer;
-    }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player" && GetComponentInParent<Quiz_System>().roundOn)
+
+        if (runAutoSubmit && GetComponentInParent<Quiz_System>().roundOn)
         {
-            playerOn = true;
             autosubmitTimer += Time.deltaTime;
 
-            if(autosubmitTimer >= autosubmitTime)
+            if (autosubmitTimer >= autosubmitTime)
             {
                 autosubmitTimer = 0;
                 GetComponentInParent<Quiz_System>().TeardownField();
             }
+        } else
+        {
+            autosubmitTimer = 0;
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            playerOn = true;
+            runAutoSubmit = true;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && GetComponentInParent<Quiz_System>().roundOn)
+        if (collision.gameObject.tag == "Player")
         {
-            autosubmitTimer = 0;
             playerOn = false;
+            runAutoSubmit = false;
         }
     }
 }
