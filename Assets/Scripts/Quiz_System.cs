@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class Quiz_System : MonoBehaviour
 {
     [Header("Answer Tile Injection")]
@@ -19,19 +20,22 @@ public class Quiz_System : MonoBehaviour
     public QuestionAtlas[] quizSheet;
     public string playerAnswer;
 
+    [Header("Fade Out Injection")]
+    public SpriteRenderer fader;
+
     [Header("Timer Values")]
-    public float answerTime;
-    private float answerTimer;
+    public float answerTime, fadeOutTime;
+    private float answerTimer, fadeOutTimer;
 
     private int numberCorrect, questionIndex = 0;
 
     public bool roundOn = false;
-    private bool previousCorrect;
+    private bool previousCorrect, fadeOut, lastLines = false;
     private List<string> dialogue = new List<string>();
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -45,6 +49,23 @@ public class Quiz_System : MonoBehaviour
         if (inDialogue)
         {
             DialogueController();
+        }
+
+        if (fadeOut)
+        {
+            FadeOut();
+        }
+    }
+
+    void FadeOut()
+    {
+        fadeOutTimer += Time.deltaTime;
+
+        fader.color = new Color(0, 0, 0, fadeOutTimer/fadeOutTime);
+
+        if(fadeOutTimer >= fadeOutTime)
+        {
+            Application.Quit();
         }
     }
 
@@ -61,6 +82,11 @@ public class Quiz_System : MonoBehaviour
                 roundOn = true;
                 dialogueBox.SetActive(false);
                 Player_Movement.playerState = Player_Movement.MovementStates.STANDING;
+
+                if (lastLines)
+                {
+                    fadeOut = true;
+                }
             }
         }
 
@@ -130,7 +156,7 @@ public class Quiz_System : MonoBehaviour
 
         dialogueBox.SetActive(true);
         inDialogue = true;
-
+        lastLines = true;
     }
 
     public void PrepareField()
