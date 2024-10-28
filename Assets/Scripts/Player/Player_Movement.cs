@@ -45,6 +45,8 @@ public class Player_Movement : MonoBehaviour
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
 
+    public HealthSystem healthSys;
+
     public Animator anim;
 
     private AudioSource source;
@@ -55,6 +57,12 @@ public class Player_Movement : MonoBehaviour
         collisionBox = this.gameObject.GetComponent<BoxCollider2D>();
         anim = this.gameObject.GetComponent<Animator>();
         source = this.gameObject.GetComponent<AudioSource>();
+
+        // ensures that the player has a health system object before getting that component
+        if (gameObject.GetComponent<HealthSystem>() != null)
+        {
+            healthSys = GetComponent<HealthSystem>();
+        }
     }
     public DoorTransitions playerTransition = DoorTransitions.NoTransition;
 
@@ -69,7 +77,7 @@ public class Player_Movement : MonoBehaviour
             IntangibleTimer();
         }
 
-        if(actionable)
+        if(actionable && healthSys.GetHealth() > 0)
         {
             MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));  //Execute Player Movement
             
@@ -452,6 +460,7 @@ public class Player_Movement : MonoBehaviour
             {
                 playerState = Player_Movement.MovementStates.HIT;
                 hitPos = collision.gameObject.transform.position;
+                GetComponent<HealthSystem>().OnHit(1);
             }
         }
     }

@@ -24,7 +24,7 @@ public class DoorSystem : MonoBehaviour
         if (doorTouched && pm.playerTransition == Player_Movement.DoorTransitions.Transitioning)
         {
             //MovePlayer();
-            print("Player is moving");
+            //print("Player is moving");
         }
         // when the player reaches the next door
         if(NextDoorReached())
