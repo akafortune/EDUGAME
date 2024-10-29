@@ -135,13 +135,33 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             readyTimer = 0;
             dashTarget = chaseTarget.transform.position;
             enemyState = EnemyState.CHARGING;
+            anim.SetBool("isCharging", true);
         }
     }
 
     void Charging()
     {
         this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, dashTarget, chargeSpeed * Time.deltaTime);
+        anim.SetTrigger("AttackTrigger");
         chargeTimer += Time.deltaTime;
+
+        Vector3 targetDir = this.gameObject.transform.position - dashTarget;
+        if(targetDir.x < 0)
+        {
+            anim.SetFloat("moveX", 1);
+        }
+        else
+        {
+            anim.SetFloat("moveX", -1);
+        }
+        if(targetDir.y<0)
+        {
+            anim.SetFloat("moveY", -1);
+        }
+        else
+        {
+            anim.SetFloat("moveY", 1);
+        }
 
         if(Vector3.Distance(this.gameObject.transform.position,dashTarget) < .5 || chargeTimer >= chargeTime)
         {
@@ -189,6 +209,10 @@ public class Basic_Enemy_Behavior : MonoBehaviour
                 nextWaypoint++;
             }
         }
+
+        //when patrolling the direction is defaulted to 0 because no target is in range
+        anim.SetFloat("moveX", 0);
+        anim.SetFloat("moveY", 0);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

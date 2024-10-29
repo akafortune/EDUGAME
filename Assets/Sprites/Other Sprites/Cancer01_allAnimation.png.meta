@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2618df006e5c4d48b61abea80b8d3d1
+guid: 42f64a6cd206ac94d981d6e6fb296c94
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,9 +37,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileMap-Sheet_0
+      name: Cancer01_allAnimation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 560
-        width: 80
-        height: 80
+        y: 1120
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,461 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e0da6b8cda7b847a9fd6cf713f7436
-      internalID: 487081315
+      spriteID: 15523b1b4cb6a594c9a7327b56b040de
+      internalID: 1228517664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_1
+      name: Cancer01_allAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1120
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b8b2b1b44b6634ba6d78bdd721882f
+      internalID: 1038658172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e78434f09a31b44ebe2fcf43e98e36f
+      internalID: -311285925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a681b67270a2ace4693099cd62888fa1
+      internalID: -1432841619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e9d51965648a649822e6281c901a9a
+      internalID: 1421560861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26861a235dc7fe74a8452ab87a0ea7dd
+      internalID: 865018226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b308cb26c6124341bbedec60409fb7c
+      internalID: 609029046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45512a41dfb96974e823ccaa529456eb
+      internalID: 99287242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 960
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a0aa800eb74024db9e0221bd998a6b
+      internalID: 1928153112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4d9805118615e4f850838ff36bc0c8
+      internalID: -1553564604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02072ed8fbd6a874f9e3ad714e7011bf
+      internalID: 660120824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e04d2f46d4a5440afeaca26f70e28d
+      internalID: -213814726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8126d600451c8945a0116640ab698cc
+      internalID: 177495246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fc2b9e121301641a690264fbdce2ff
+      internalID: 785767513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be58e920a67dc9740b476b75aea43708
+      internalID: -543206697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb13a773847c6643ad0f6bec4e95cf4
+      internalID: 1891009983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 800
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b2c8a841e267b4da06e1cec102f7ff
+      internalID: 1091369722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aab40e8c0a19a747b6c182864a07d79
+      internalID: 1625363040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 640
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0c141feafc8964097de5aa9e2c78d9
+      internalID: 237864260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9714da209ff7b43b68fc02eb21ee7e
+      internalID: 2106706238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_20
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 640
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b241f2bec918242b69b733ea441cbc
+      internalID: -519863948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b686646e210217240a25f18eda87a2a5
+      internalID: -2103201400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_22
       rect:
         serializedVersion: 2
         x: 0
         y: 480
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,41 +586,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3377c5923fa6e8c4186ec23e3535e6ec
-      internalID: -1367492414
+      spriteID: c3c2532f0c2d51f459715d108867993e
+      internalID: 1407866173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 480
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a95ec0a9a8d25e54ca1f8dd2e01e0462
-      internalID: -1643364662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_3
+      name: Cancer01_allAnimation_23
       rect:
         serializedVersion: 2
         x: 160
         y: 480
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,41 +607,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82cfbaea3a3eec24aa9ec4ff9043325d
-      internalID: 397520200
+      spriteID: 06c891babc248454dbebac13a8fdcbcc
+      internalID: 727480928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 480
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9aaf4d698797a9445a0d6a8c83c42cff
-      internalID: 189838468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_5
+      name: Cancer01_allAnimation_24
       rect:
         serializedVersion: 2
         x: 320
         y: 480
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +628,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa6e378b42c3d8648a438a213ef2e426
-      internalID: -959793292
+      spriteID: 86a10f83cb50c9a428276aa0c543fac3
+      internalID: -2043391246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_6
+      name: Cancer01_allAnimation_25
       rect:
         serializedVersion: 2
-        x: 400
+        x: 480
         y: 480
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +649,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5082af138114431418ff94482746e069
-      internalID: -191393978
+      spriteID: dd0087687c5beee48a930d2a00739668
+      internalID: -653254282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_7
+      name: Cancer01_allAnimation_26
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4862c386af5edee4982537fba1fb2493
+      internalID: -1405176087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_27
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc5309029d0b8a4bb84d39b1a593d75
+      internalID: 161948557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_28
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
-        width: 80
-        height: 80
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,41 +712,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd7eb0acfd87b3d428fc7f73ac8daa83
-      internalID: -2070569445
+      spriteID: 4f6afa9f01000224cbc717484efe5e36
+      internalID: 531008668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 400
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 387cada8cc59dd14b90c889123e68887
-      internalID: -1052192938
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_9
+      name: Cancer01_allAnimation_29
       rect:
         serializedVersion: 2
         x: 160
-        y: 400
-        width: 80
-        height: 80
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,62 +733,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14d937def90013c4db5ea752d2cfa6c4
-      internalID: 901340934
+      spriteID: db15715296c120d4ca41bb4705ef3f67
+      internalID: 704747580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 400
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9ca6fc0d26b6ad4b8f6f27388a20fbd
-      internalID: 20643462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_11
+      name: Cancer01_allAnimation_30
       rect:
         serializedVersion: 2
         x: 320
-        y: 400
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21e6a7fb2c0c1634ca6ef8ab60b4ada7
-      internalID: -942326702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 320
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,62 +754,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f78112c9777f2645b1e11caa1621be6
-      internalID: -1637072995
+      spriteID: 90a9bad46c17c8e41b3cb3269ecc887f
+      internalID: -1937939577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 320
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 361f16e62321be642ab1ed8de6fc6cae
-      internalID: -1337948391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 320
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c00a80ba3886ef469d5514ce219d5f5
-      internalID: 1428060119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_15
+      name: Cancer01_allAnimation_31
       rect:
         serializedVersion: 2
         x: 480
         y: 320
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +775,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3dcdd6db8c4ab746a631f39f30154c6
-      internalID: -354349160
+      spriteID: 5a516c3691a47da47812c2b25173c024
+      internalID: 1170010118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_16
+      name: Cancer01_allAnimation_32
       rect:
         serializedVersion: 2
-        x: 0
-        y: 240
-        width: 80
-        height: 80
+        x: 640
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,125 +796,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 361eed19b2472614aadc95343b535866
-      internalID: 811356845
+      spriteID: d94728daebc2ddb4b9e0321d3c30cd6d
+      internalID: 2019285699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 240
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 802713c8e2baf774dabb9cc0637490ed
-      internalID: -1134404751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 240
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7a7fdb34aaf19647a2e3ed17492c4e3
-      internalID: 299314721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 240
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c750c3032a16484096c5691e9c8f921
-      internalID: -27986251
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_20
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 240
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 898a70d30a1b4d54fa923da40d43ebe8
-      internalID: 1733164283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 240
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d90fd9b843ed614784c2a4526022845
-      internalID: -1093991876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_22
+      name: Cancer01_allAnimation_33
       rect:
         serializedVersion: 2
         x: 0
         y: 160
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,41 +817,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f891f5ff4b700a469600cec85f96769
-      internalID: -243572809
+      spriteID: f7859247018c63d49930c5e441bbad80
+      internalID: -439211246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_23
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 160
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c6ae4d043fc4614994fc91bf80c89f2
-      internalID: 1053234902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_24
+      name: Cancer01_allAnimation_34
       rect:
         serializedVersion: 2
         x: 160
         y: 160
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -628,20 +838,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca1e252db8b440408f3cec41bc3c1d4
-      internalID: 889380013
+      spriteID: e4bdd30b9a10e974d98b6ff26a87a78d
+      internalID: -693613360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_25
+      name: Cancer01_allAnimation_35
       rect:
         serializedVersion: 2
-        x: 240
+        x: 320
         y: 160
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -649,41 +859,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbeab5ce7697edc4995c740cd09ae8df
-      internalID: -1773618317
+      spriteID: 2c9170d32496d1144900bd31f550aefe
+      internalID: 2101022307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_26
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 160
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecd597ad8f3ffa14f9241a909e0a81c9
-      internalID: -405521412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_27
+      name: Cancer01_allAnimation_36
       rect:
         serializedVersion: 2
         x: 480
         y: 160
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -691,20 +880,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6126108b4878760439ace024b546fe4b
-      internalID: 507370390
+      spriteID: c2f4ab5ee1352d242be2b7d19a667f16
+      internalID: 1584385217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_28
+      name: Cancer01_allAnimation_37
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
-        width: 80
-        height: 80
+        x: 640
+        y: 160
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -712,125 +901,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 504f7217fffbcaa45b61fbe789251271
-      internalID: -1607843985
+      spriteID: dfe4c53f947b8414eb0569290f33e86d
+      internalID: 1688014950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_29
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76118863f5ce3624eb936df4d2cdf0ba
-      internalID: -1129941745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_30
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51886c2f2324a074da2c36a5172e2d3e
-      internalID: 522129939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_31
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aafdb6b87493e294e98957693567ac08
-      internalID: 1049035872
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_32
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e14aaa4edf0d85940805c5de934b8cfa
-      internalID: -2019291766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_33
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 80
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61cbb06f4d1534f4389e9f2f1727394f
-      internalID: 1934581308
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_34
+      name: Cancer01_allAnimation_38
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -838,41 +922,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bab6b6971f5f3ee47a6c7f8ecd60d1ca
-      internalID: 505311537
+      spriteID: 9014ce5d91ba7fd46809980e6667977d
+      internalID: -1795303084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_35
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ae19f04ce9feb24988f33fbdd329478
-      internalID: -1424512086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_36
+      name: Cancer01_allAnimation_39
       rect:
         serializedVersion: 2
         x: 160
         y: 0
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -880,20 +943,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78bd1bda6b632a343a5c8ec80c387e24
-      internalID: 997497570
+      spriteID: 6a0d0448138e3974fab46f585c0b0c89
+      internalID: -1977258743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_37
+      name: Cancer01_allAnimation_40
       rect:
         serializedVersion: 2
-        x: 240
+        x: 320
         y: 0
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -901,41 +964,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72cd78fddf9104c45bab5974b3a3f9a5
-      internalID: -1240152444
+      spriteID: b17ae2d1c9b2163468432d2619aca68c
+      internalID: -2115741956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileMap-Sheet_38
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bbb53e7408074d7468bb4557f941f884
-      internalID: -499815186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileMap-Sheet_39
+      name: Cancer01_allAnimation_41
       rect:
         serializedVersion: 2
         x: 480
         y: 0
-        width: 80
-        height: 80
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -943,8 +985,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f3bfb99dc08d8a48826c27ce57535e4
-      internalID: -1219850164
+      spriteID: c79e959ec190dd54387479ddd783c668
+      internalID: -2111406454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cancer01_allAnimation_42
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdf116315a1841408e535bbf86094c0
+      internalID: -796061198
       vertices: []
       indices: 
       edges: []
@@ -960,46 +1023,49 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileMap-Sheet_0: 487081315
-      tileMap-Sheet_1: -1367492414
-      tileMap-Sheet_10: 20643462
-      tileMap-Sheet_11: -942326702
-      tileMap-Sheet_12: -1637072995
-      tileMap-Sheet_13: -1337948391
-      tileMap-Sheet_14: 1428060119
-      tileMap-Sheet_15: -354349160
-      tileMap-Sheet_16: 811356845
-      tileMap-Sheet_17: -1134404751
-      tileMap-Sheet_18: 299314721
-      tileMap-Sheet_19: -27986251
-      tileMap-Sheet_2: -1643364662
-      tileMap-Sheet_20: 1733164283
-      tileMap-Sheet_21: -1093991876
-      tileMap-Sheet_22: -243572809
-      tileMap-Sheet_23: 1053234902
-      tileMap-Sheet_24: 889380013
-      tileMap-Sheet_25: -1773618317
-      tileMap-Sheet_26: -405521412
-      tileMap-Sheet_27: 507370390
-      tileMap-Sheet_28: -1607843985
-      tileMap-Sheet_29: -1129941745
-      tileMap-Sheet_3: 397520200
-      tileMap-Sheet_30: 522129939
-      tileMap-Sheet_31: 1049035872
-      tileMap-Sheet_32: -2019291766
-      tileMap-Sheet_33: 1934581308
-      tileMap-Sheet_34: 505311537
-      tileMap-Sheet_35: -1424512086
-      tileMap-Sheet_36: 997497570
-      tileMap-Sheet_37: -1240152444
-      tileMap-Sheet_38: -499815186
-      tileMap-Sheet_39: -1219850164
-      tileMap-Sheet_4: 189838468
-      tileMap-Sheet_5: -959793292
-      tileMap-Sheet_6: -191393978
-      tileMap-Sheet_7: -2070569445
-      tileMap-Sheet_8: -1052192938
-      tileMap-Sheet_9: 901340934
+      Cancer01_allAnimation_0: 1228517664
+      Cancer01_allAnimation_1: 1038658172
+      Cancer01_allAnimation_10: 660120824
+      Cancer01_allAnimation_11: -213814726
+      Cancer01_allAnimation_12: 177495246
+      Cancer01_allAnimation_13: 785767513
+      Cancer01_allAnimation_14: -543206697
+      Cancer01_allAnimation_15: 1891009983
+      Cancer01_allAnimation_16: 1091369722
+      Cancer01_allAnimation_17: 1625363040
+      Cancer01_allAnimation_18: 237864260
+      Cancer01_allAnimation_19: 2106706238
+      Cancer01_allAnimation_2: -311285925
+      Cancer01_allAnimation_20: -519863948
+      Cancer01_allAnimation_21: -2103201400
+      Cancer01_allAnimation_22: 1407866173
+      Cancer01_allAnimation_23: 727480928
+      Cancer01_allAnimation_24: -2043391246
+      Cancer01_allAnimation_25: -653254282
+      Cancer01_allAnimation_26: -1405176087
+      Cancer01_allAnimation_27: 161948557
+      Cancer01_allAnimation_28: 531008668
+      Cancer01_allAnimation_29: 704747580
+      Cancer01_allAnimation_3: -1432841619
+      Cancer01_allAnimation_30: -1937939577
+      Cancer01_allAnimation_31: 1170010118
+      Cancer01_allAnimation_32: 2019285699
+      Cancer01_allAnimation_33: -439211246
+      Cancer01_allAnimation_34: -693613360
+      Cancer01_allAnimation_35: 2101022307
+      Cancer01_allAnimation_36: 1584385217
+      Cancer01_allAnimation_37: 1688014950
+      Cancer01_allAnimation_38: -1795303084
+      Cancer01_allAnimation_39: -1977258743
+      Cancer01_allAnimation_4: 1421560861
+      Cancer01_allAnimation_40: -2115741956
+      Cancer01_allAnimation_41: -2111406454
+      Cancer01_allAnimation_42: -796061198
+      Cancer01_allAnimation_5: 865018226
+      Cancer01_allAnimation_6: 609029046
+      Cancer01_allAnimation_7: 99287242
+      Cancer01_allAnimation_8: 1928153112
+      Cancer01_allAnimation_9: -1553564604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
