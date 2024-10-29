@@ -78,8 +78,8 @@ public class HealthSystem : MonoBehaviour
     // respawns the player at the correct respawn point
     public void RespawnPlayer()
     {
-        Debug.Log(PlayerPrefs.GetFloat("respawnX"));
-        Debug.Log(PlayerPrefs.GetFloat("respawnY"));
+        //Debug.Log(PlayerPrefs.GetFloat("respawnX"));
+        //Debug.Log(PlayerPrefs.GetFloat("respawnY"));
         this.transform.position = new Vector3(PlayerPrefs.GetFloat("respawnX", this.transform.position.x),
             PlayerPrefs.GetFloat("respawnY", this.transform.position.y),0f);
         OnHeal((int)(maxHealth/2) + 1); // healing up to half of the health

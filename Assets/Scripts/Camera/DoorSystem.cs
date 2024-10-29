@@ -12,6 +12,19 @@ public class DoorSystem : MonoBehaviour
 
     private int _lastChildIndex;
     // Start is called before the first frame update
+    
+    /*
+     * HOW TO ENSURE RESPAWN POINTS WORK PROPERLY
+     * When setting up a room, be sure to make inactive (in the editor) the side of the door that the player is going to.
+     * ex.
+     *    |---------------|       C=Active
+     *    |               |       X=Inactive
+     * XDOORC           CDOORX
+     *    |               |
+     *    |---------------|
+     * The door of the connecting room will handle its own respawning. 
+     * Note: Be sure to set the RespawnPos child to where you want the respawn point to be. that what determines location
+     */
     void Start()
     {
         roomWall = transform.parent.gameObject.transform.parent.gameObject;
@@ -29,8 +42,8 @@ public class DoorSystem : MonoBehaviour
         {
             PlayerPrefs.SetFloat("respawnX", roomWall.transform.GetChild(_lastChildIndex).transform.position.x);
             PlayerPrefs.SetFloat("respawnY", roomWall.transform.GetChild(_lastChildIndex).transform.position.y);
-            Debug.Log(PlayerPrefs.GetFloat("respawnX"));
-            Debug.Log(PlayerPrefs.GetFloat("respawnY"));
+            //Debug.Log(PlayerPrefs.GetFloat("respawnX"));
+            //Debug.Log(PlayerPrefs.GetFloat("respawnY"));
             //MovePlayer();
             //print("Player is moving");
             pm.ChangeTransitionState("NoTransition");
