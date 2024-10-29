@@ -117,10 +117,31 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         if(Vector3.Distance(this.gameObject.transform.position, chaseTarget.transform.position) <= chargeDist)
         {
             enemyState = EnemyState.READYING;
+            anim.SetTrigger("AttackTrigger");
+            anim.SetBool("isCharging", false);
+            //decides which direction is being charged
+            Vector3 targetDir = this.gameObject.transform.position - dashTarget;
+            if (targetDir.x < 0)
+            {
+                anim.SetFloat("moveX", 1);
+            }
+            else
+            {
+                anim.SetFloat("moveX", -1);
+            }
+            if (targetDir.y > 0)
+            {
+                anim.SetFloat("moveY", -1);
+            }
+            else
+            {
+                anim.SetFloat("moveY", 1);
+            }
         }
 
         if (!otherInRange)
         {
+            anim.SetBool("isCharging", false);
             enemyState = EnemyState.LOOKING;
         }
     }
@@ -142,37 +163,23 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     void Charging()
     {
         this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, dashTarget, chargeSpeed * Time.deltaTime);
-        anim.SetTrigger("AttackTrigger");
+
         chargeTimer += Time.deltaTime;
 
-        Vector3 targetDir = this.gameObject.transform.position - dashTarget;
-        if(targetDir.x < 0)
-        {
-            anim.SetFloat("moveX", 1);
-        }
-        else
-        {
-            anim.SetFloat("moveX", -1);
-        }
-        if(targetDir.y<0)
-        {
-            anim.SetFloat("moveY", -1);
-        }
-        else
-        {
-            anim.SetFloat("moveY", 1);
-        }
-
-        if(Vector3.Distance(this.gameObject.transform.position,dashTarget) < .5 || chargeTimer >= chargeTime)
+        if (Vector3.Distance(this.gameObject.transform.position,dashTarget) < .5 || chargeTimer >= chargeTime)
         {
             chargeTimer = 0;
             enemyState = EnemyState.LOOKING;
+
+           
         }  else if (collisionInCharge)
         {
             chargeTimer = 0;
             collisionInCharge = false;
+            anim.SetBool("isCharging", false);
             enemyState = EnemyState.LOOKING;
         }
+
     }
 
     void Look()
