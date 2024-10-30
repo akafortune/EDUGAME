@@ -250,7 +250,7 @@ public class Basic_Enemy_Behavior : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
+        if (!collision.gameObject.GetComponent<Player_Movement>().intangible || !collision.gameObject.GetComponent<HealthSystem>().hasDied)
         {
             collision.gameObject.GetComponent<HealthSystem>().OnHit(1);
         }

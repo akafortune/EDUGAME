@@ -31,6 +31,14 @@ public class Enemy_Detection_Field : MonoBehaviour
         if(validTargets.Contains(collision.name))
         {
             objsInTrigger.Add(collision.gameObject);
+            if(collision.name.Contains("Player")) // makes sure the player is not dead
+            {
+                if (collision.GetComponent<HealthSystem>().hasDied == false)
+                {
+                    behavior.chaseTarget = collision.gameObject;
+                }
+            }
+
             behavior.chaseTarget = collision.gameObject;
         }
     }

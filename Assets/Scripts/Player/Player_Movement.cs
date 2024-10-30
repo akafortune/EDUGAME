@@ -45,7 +45,7 @@ public class Player_Movement : MonoBehaviour
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
 
-    public HealthSystem healthSys;
+    public HealthSystem healthSys; // the health system script attatched to the player
 
     public Animator anim;
 
