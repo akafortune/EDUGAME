@@ -66,6 +66,7 @@ public class HealthSystem : MonoBehaviour
         if (this.name.Equals("Player"))
         {
             this.GetComponent<SpriteRenderer>().enabled = false;
+            this.GetComponent<BoxCollider2D>().enabled = false; //safety measure for not having obstacles collide with player after dying
             hasDied = true;
         }
         //enemies will dies
@@ -86,6 +87,7 @@ public class HealthSystem : MonoBehaviour
         hasDied = false;
         countDown = timeTillRespawn;
         this.GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = true;
     }
 
 }
