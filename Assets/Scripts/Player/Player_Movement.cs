@@ -96,6 +96,7 @@ public class Player_Movement : MonoBehaviour
                 if (Input.GetAxis("Stun") > 0)
                 {
                     Stun();
+                    anim.SetTrigger("AttackTrigger");
                 }
             }
         }
