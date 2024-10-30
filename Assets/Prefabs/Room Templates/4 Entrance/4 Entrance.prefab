@@ -171,7 +171,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17618836171567812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -232,6 +232,7 @@ MonoBehaviour:
   nextDoor: {fileID: 3123172962227798184}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!61 &3115042930902722956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280298602193778310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -424,6 +425,7 @@ MonoBehaviour:
   nextDoor: {fileID: 104612393101351675}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!1 &295449621039929117
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +647,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458189361664115456}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -706,6 +708,7 @@ MonoBehaviour:
   nextDoor: {fileID: 7873475620989431377}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!61 &5741050381386307432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1385,7 +1388,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2722991998869048470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1446,6 +1449,7 @@ MonoBehaviour:
   nextDoor: {fileID: 2172805030799356440}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!61 &8107830054190989784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2006,7 +2010,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3473481175555237806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2112,6 +2116,7 @@ MonoBehaviour:
   nextDoor: {fileID: 5407666830386467439}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!1 &3686492469083242671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,7 +2399,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4622729392591157794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2455,6 +2460,7 @@ MonoBehaviour:
   nextDoor: {fileID: 77870592811165308}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!61 &916887840817633590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2743,7 +2749,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5950127618161972849}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2849,6 +2855,7 @@ MonoBehaviour:
   nextDoor: {fileID: 8440447762604650981}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!1 &6544030344530635296
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,7 +3383,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8596598042478961522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3482,6 +3489,7 @@ MonoBehaviour:
   nextDoor: {fileID: 3723289609790493467}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!1 &8639934904100553512
 GameObject:
   m_ObjectHideFlags: 0

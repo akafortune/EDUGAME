@@ -586,7 +586,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2658419875843803820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -692,6 +692,7 @@ MonoBehaviour:
   nextDoor: {fileID: 5213136758210176487}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!1 &3461998642337342362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1524,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695372646537831370}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1584,6 +1585,7 @@ MonoBehaviour:
   nextDoor: {fileID: 7531146450645520859}
   speed: 0
   doorTouched: 0
+  roomWall: {fileID: 0}
 --- !u!61 &2981828236913167646
 BoxCollider2D:
   m_ObjectHideFlags: 0
