@@ -16,6 +16,7 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
 
     public CancerClusterState currState;
     public GameObject wall;
+    public GameObject clusterSprite;
     public float breakdownTime;
     private float breakdownTimer = 0;
     // Start is called before the first frame update
@@ -46,6 +47,7 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
     {
         wall.GetComponent<BoxCollider2D>().isTrigger = false;
         wall.GetComponent<SpriteRenderer>().enabled = true;
+        clusterSprite.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     void BreakingDown()
@@ -64,6 +66,7 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
     {
         wall.GetComponent<BoxCollider2D>().isTrigger = true;
         wall.GetComponent<SpriteRenderer>().enabled = false;
+        clusterSprite.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     

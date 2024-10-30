@@ -48,6 +48,7 @@ MonoBehaviour:
   unlock: {fileID: 8300000, guid: a1715082c6e1dc94f96da9ed12ce1110, type: 3}
   currState: 0
   wall: {fileID: 7989659088129741689}
+  clusterSprite: {fileID: 6515930478585809603}
   breakdownTime: 0
 --- !u!82 &1524359360123807287
 AudioSource:
