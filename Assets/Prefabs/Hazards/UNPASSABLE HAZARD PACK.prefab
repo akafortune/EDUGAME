@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 7218342344942156998}
   m_Layer: 8
   m_Name: Renderer
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,3 +668,4 @@ MonoBehaviour:
   buttonRender: {fileID: 8719810787612385882}
   buttonOn: {fileID: -524670662, guid: 9072ae60f5068f74c823dd288621c308, type: 3}
   buttonOff: {fileID: -2143127012, guid: 9072ae60f5068f74c823dd288621c308, type: 3}
+  sfx: {fileID: 0}
