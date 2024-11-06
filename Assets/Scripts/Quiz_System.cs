@@ -27,6 +27,7 @@ public class Quiz_System : MonoBehaviour
     public float answerTime, fadeOutTime;
     private float answerTimer, fadeOutTimer;
 
+    public GameObject[] obstacleSets;
     private int numberCorrect, questionIndex = 0;
 
     public bool roundOn = false;
@@ -173,7 +174,7 @@ public class Quiz_System : MonoBehaviour
                 g.SetActive(false);
             }
         }
-
+        obstacleSets[questionIndex].SetActive(true);
         SetDialogue();
     }
 
@@ -215,6 +216,7 @@ public class Quiz_System : MonoBehaviour
 
         //playerAnswer = "";
         questionIndex++;
+        obstacleSets[questionIndex - 1].SetActive(false);
 
         Debug.Log(numberCorrect);
 
