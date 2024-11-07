@@ -13,7 +13,7 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         LOOKING,
         STUNNED
     }
-
+    
     public EnemyState enemyState;
     public EnemyState[] lockedInStates;
     public Transform[] waypoints;
@@ -24,10 +24,13 @@ public class Basic_Enemy_Behavior : MonoBehaviour
     public int nextWaypoint = 0;
     public bool lockedIn, otherInRange, collisionInCharge;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyState = EnemyState.PATROLLING;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,20 +44,24 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             if (otherInRange)
             {
                 enemyState = EnemyState.CHASING;
+                anim.SetBool("isIdle", false);
             }
 
             if (enemyState == EnemyState.PATROLLING)
             {
                 Patrol();
+                anim.SetBool("isIdle", true);
             }
 
             if (enemyState == EnemyState.CHASING)
             {
                 Chase();
+                anim.SetBool("isIdle", false);
             }
             if (enemyState == EnemyState.LOOKING)
             {
                 Look();
+                anim.SetBool("isIdle", true);
             }
 
         }
@@ -110,10 +117,31 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         if(Vector3.Distance(this.gameObject.transform.position, chaseTarget.transform.position) <= chargeDist)
         {
             enemyState = EnemyState.READYING;
+            anim.SetTrigger("AttackTrigger");
+            anim.SetBool("isCharging", false);
+            //decides which direction is being charged
+            Vector3 targetDir = this.gameObject.transform.position - dashTarget;
+            if (targetDir.x < 0)
+            {
+                anim.SetFloat("moveX", 1);
+            }
+            else
+            {
+                anim.SetFloat("moveX", -1);
+            }
+            if (targetDir.y > 0)
+            {
+                anim.SetFloat("moveY", -1);
+            }
+            else
+            {
+                anim.SetFloat("moveY", 1);
+            }
         }
 
         if (!otherInRange)
         {
+            anim.SetBool("isCharging", false);
             enemyState = EnemyState.LOOKING;
         }
     }
@@ -128,24 +156,30 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             readyTimer = 0;
             dashTarget = chaseTarget.transform.position;
             enemyState = EnemyState.CHARGING;
+            anim.SetBool("isCharging", true);
         }
     }
 
     void Charging()
     {
         this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, dashTarget, chargeSpeed * Time.deltaTime);
+
         chargeTimer += Time.deltaTime;
 
-        if(Vector3.Distance(this.gameObject.transform.position,dashTarget) < .5 || chargeTimer >= chargeTime)
+        if (Vector3.Distance(this.gameObject.transform.position,dashTarget) < .5 || chargeTimer >= chargeTime)
         {
             chargeTimer = 0;
             enemyState = EnemyState.LOOKING;
+
+           
         }  else if (collisionInCharge)
         {
             chargeTimer = 0;
             collisionInCharge = false;
+            anim.SetBool("isCharging", false);
             enemyState = EnemyState.LOOKING;
         }
+
     }
 
     void Look()
@@ -182,6 +216,10 @@ public class Basic_Enemy_Behavior : MonoBehaviour
                 nextWaypoint++;
             }
         }
+
+        //when patrolling the direction is defaulted to 0 because no target is in range
+        anim.SetFloat("moveX", 0);
+        anim.SetFloat("moveY", 0);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -200,16 +238,6 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         }
 
 
-        if (collision.gameObject.name == "Player" )
-        {
-            if (!collision.gameObject.GetComponent<Player_Movement>().intangible)
-            {
-                Player_Movement.playerState = Player_Movement.MovementStates.HIT;
-                collision.gameObject.GetComponent<Player_Movement>().hitPos = this.gameObject.transform.position;
-                enemyState = EnemyState.PATROLLING;
-            }
-        }
-
         if(collision.gameObject.name == "NK")
         {
             if(collision.gameObject.GetComponent<NK_Pathing>().effectable)
@@ -220,4 +248,11 @@ public class Basic_Enemy_Behavior : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.GetComponent<Player_Movement>().intangible || !collision.gameObject.GetComponent<HealthSystem>().hasDied)
+        {
+            collision.gameObject.GetComponent<HealthSystem>().OnHit(1);
+        }
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Basic_Enemy_Behavior;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -37,15 +38,31 @@ public class Player_Movement : MonoBehaviour
     public MovementStates[] inactionableStates;
     public static MovementStates playerState;
     public Vector3 rollTarget, hitPos, reelTarget;
-    public bool restand, actionable, intangible, reeled = false;
-    public GameObject stunBox;
+    public Transform carryPos;
+    public bool restand, actionable, intangible, carrying, reeled = false;
+    public GameObject stunBox, carryingItem;
     private BoxCollider2D collisionBox;
     public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
     private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
 
+    public HealthSystem healthSys; // the health system script attatched to the player
+
+    public Animator anim;
+
+    private AudioSource source;
+    public AudioClip reelSound;
+    public AudioClip stunSound;
     private void Start()
     {
         collisionBox = this.gameObject.GetComponent<BoxCollider2D>();
+        anim = this.gameObject.GetComponent<Animator>();
+        source = this.gameObject.GetComponent<AudioSource>();
+
+        // ensures that the player has a health system object before getting that component
+        if (gameObject.GetComponent<HealthSystem>() != null)
+        {
+            healthSys = GetComponent<HealthSystem>();
+        }
     }
     public DoorTransitions playerTransition = DoorTransitions.NoTransition;
 
@@ -60,24 +77,31 @@ public class Player_Movement : MonoBehaviour
             IntangibleTimer();
         }
 
-        if(actionable)
+        if(actionable && healthSys.GetHealth() > 0)
         {
             MovementCheck(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));  //Execute Player Movement
+            
             lastPressed = PressCheck();
-            
-            if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
-            {
-                playerState = MovementStates.ROLLING;
-                SetRollDir();
-            }
 
-            if(Input.GetAxis("Stun") > 0)
-            {
-                Stun();
-            }
+            setAnimationDirection();
 
-            
+            if (!carrying)
+            {
+                if (Input.GetAxis("Roll") > 0)  //Roll Entry Check
+                {
+                    playerState = MovementStates.ROLLING;
+                    SetRollDir();
+                }
+
+                if (Input.GetAxis("Stun") > 0)
+                {
+                    Stun();
+                    anim.SetTrigger("AttackTrigger");
+                }
+            }
         }
+
+        
 
         if (playerState == MovementStates.STUNNING)
         {
@@ -97,6 +121,8 @@ public class Player_Movement : MonoBehaviour
             if (Roll())  //Roll returns a bool determining if the player is done rolling (determined via a timer)
             {
                 restand = true;
+                anim.SetTrigger("EndRollTrigger"); //triggers the stand up animation
+                this.gameObject.layer = 8;
             }
         }
 
@@ -104,6 +130,7 @@ public class Player_Movement : MonoBehaviour
         {
             intangible = false;
             restandTimer += Time.deltaTime;
+            
 
             if (restandTimer > restandTime)
             {
@@ -124,10 +151,48 @@ public class Player_Movement : MonoBehaviour
             stunBox.SetActive(false);
             Hit();
         }
+
+        if(carryingItem != null)
+        {
+            if (carryingItem.GetComponent<Radioactive_Behavior>().currState == Radioactive_Behavior.Radioactive_State.EXPLODING)
+            {
+                carrying = false;
+            }
+        }
     }
 
-    void SetReelPos()
+    void setAnimationDirection()
     {
+        if (lastPressed == Directions.RIGHT)
+        {
+            anim.SetFloat("moveX", 1);
+            anim.SetFloat("moveY", 0);
+        }
+        if (lastPressed == Directions.LEFT)
+        {
+            anim.SetFloat("moveX", -1);
+            anim.SetFloat("moveY", 0);
+        }
+        if (lastPressed == Directions.UP)
+        {
+            anim.SetFloat("moveY", 1);
+            anim.SetFloat("moveX", 0);
+        }
+        if (lastPressed == Directions.DOWN)
+        {
+            anim.SetFloat("moveY", -1);
+            anim.SetFloat("moveX", 0);
+        }
+        if (lastPressed == Directions.NONE)
+        {
+            anim.SetFloat("moveY", 0);
+            anim.SetFloat("moveX", 0);
+        }
+    }
+
+        void SetReelPos()
+    {
+        source.PlayOneShot(reelSound);
         float x = 0, y = 0;
 
         if (hitPos.x > this.gameObject.transform.position.x + hitPosLenience)
@@ -168,7 +233,7 @@ public class Player_Movement : MonoBehaviour
         this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, reelTarget, reelSpeed * Time.deltaTime);
 
         downTimer += Time.deltaTime;
-
+        anim.SetTrigger("HurtTrigger");
         if(downTimer > downTime)
         {
             downTimer = 0;
@@ -180,46 +245,66 @@ public class Player_Movement : MonoBehaviour
 
     void MovementCheck(float x, float y)
     {
-        if( x <  0 )
+        
+        if ( x <  0 )
         {
             x = -1;
             facing[0] = Directions.LEFT;
+            //anim.SetFloat("moveX", x);
+            //anim.SetFloat("moveY", 0);
+
         } else if (x > 0)
         {
             x = 1;
             facing[0] = Directions.RIGHT;
+           // anim.SetFloat("moveX", x);
+            //anim.SetFloat("moveY", 0);
+
         } else 
         { 
             x = 0;
             facing[0] = Directions.NONE;
+            
         }
+        
 
         if (y < 0)
         {
             y = -1;
             facing[1] = Directions.DOWN;
+           // anim.SetFloat("moveY", y);
+            //anim.SetFloat("moveX", 0);
         }
         else if (y > 0)
         {
             y = 1;
             facing[1] = Directions.UP;
+            //anim.SetFloat("moveY", y);
+            //anim.SetFloat("moveX", 0);
         }
         else
         {
             y = 0;
             facing[1] = Directions.NONE;
-        } 
+            
+        }
 
         
-        Vector3 movePos = new Vector3(x * Time.deltaTime, y * Time.deltaTime, 0).normalized;
+        
+        Vector3 movePos = new Vector3(x * Time.deltaTime, y * Time.deltaTime, 0)/*.normalized*/;
         this.gameObject.transform.position += movePos * speed;
         
         if(x == 0 && y == 0)
         {
             playerState = MovementStates.STANDING;
+            anim.SetBool("Walking", false);
+            
+
         } else
         {
             playerState = MovementStates.MOVING;
+            anim.SetBool("Walking", true);
+            
         }
         
     }
@@ -258,6 +343,8 @@ public class Player_Movement : MonoBehaviour
         }
 
         rollTarget = gameObject.transform.position + new Vector3(x * rollDist, y * rollDist, 0).normalized * rollDist;
+
+        anim.SetTrigger("RollTrigger");
         
     }
 
@@ -265,6 +352,8 @@ public class Player_Movement : MonoBehaviour
     {
         rollTimer += Time.deltaTime;
         this.transform.position = Vector3.MoveTowards(this.transform.position, rollTarget, rollSpeed * Time.deltaTime);
+        this.gameObject.layer = 7;
+        
 
         if(rollTimer > rollTime)
         {
@@ -311,6 +400,7 @@ public class Player_Movement : MonoBehaviour
 
     public void Stun()
     {
+        source.PlayOneShot(stunSound);
         playerState = MovementStates.STUNNING;
 
         int x = 0, y = 0;
@@ -359,6 +449,20 @@ public class Player_Movement : MonoBehaviour
         else
         {
             print("Wrong String: " + t);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Hazard")
+        {
+            if (!intangible)
+            {
+                playerState = Player_Movement.MovementStates.HIT;
+                hitPos = collision.gameObject.transform.position;
+                GetComponent<HealthSystem>().OnHit(1);
+            }
         }
     }
 }

@@ -1,0 +1,4 @@
+[Doctor] This is a test demo for the working dialouge system.
+[Doctor] It should work as function.
+[Assistant] When the character changes, the name for it also changes, as well in a future update, the portrait of the character.
+[Warrior] Hopefully this works out well!

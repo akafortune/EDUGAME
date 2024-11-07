@@ -147,4 +147,12 @@ public class NK_Pathing : MonoBehaviour
             currState = NK_State.STUNNED;
         }
     }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Hazard")
+        {
+            currState = NK_State.HIT;
+        }
+    }
 }

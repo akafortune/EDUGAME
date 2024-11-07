@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Cancer_Cell_NK_Bheavior : MonoBehaviour
 {
+    private AudioSource source;
+
+    public AudioClip unlock;
     public enum CancerClusterState
     {
         ALIVE,
@@ -13,11 +16,13 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
 
     public CancerClusterState currState;
     public GameObject wall;
+    public GameObject clusterSprite;
     public float breakdownTime;
     private float breakdownTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
+        source = this.gameObject.GetComponent<AudioSource>();
         currState = CancerClusterState.ALIVE;
     }
 
@@ -42,10 +47,12 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
     {
         wall.GetComponent<BoxCollider2D>().isTrigger = false;
         wall.GetComponent<SpriteRenderer>().enabled = true;
+        clusterSprite.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     void BreakingDown()
     {
+        source.PlayOneShot(unlock);
         breakdownTimer += Time.deltaTime;
 
         if(breakdownTimer> breakdownTime)
@@ -59,5 +66,8 @@ public class Cancer_Cell_NK_Bheavior : MonoBehaviour
     {
         wall.GetComponent<BoxCollider2D>().isTrigger = true;
         wall.GetComponent<SpriteRenderer>().enabled = false;
+        clusterSprite.GetComponent<SpriteRenderer>().enabled = false;
     }
+
+    
 }
