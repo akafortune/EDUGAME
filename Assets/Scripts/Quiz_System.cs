@@ -27,6 +27,7 @@ public class Quiz_System : MonoBehaviour
     public float answerTime, fadeOutTime;
     private float answerTimer, fadeOutTimer;
 
+    public GameObject[] obstacleSets;
     private int numberCorrect, questionIndex = 0;
 
     public bool roundOn = false;
@@ -61,9 +62,9 @@ public class Quiz_System : MonoBehaviour
     {
         fadeOutTimer += Time.deltaTime;
 
-        fader.color = new Color(0, 0, 0, fadeOutTimer/fadeOutTime);
+        fader.color = new Color(0, 0, 0, fadeOutTimer / fadeOutTime);
 
-        if(fadeOutTimer >= fadeOutTime)
+        if (fadeOutTimer >= fadeOutTime)
         {
             Application.Quit();
         }
@@ -73,10 +74,11 @@ public class Quiz_System : MonoBehaviour
     {
         if (Input.GetButtonDown("Stun"))
         {
-            if(dialogueIndex < dialogue.Count - 1)
+            if (dialogueIndex < dialogue.Count - 1)
             {
                 dialogueIndex++;
-            } else
+            }
+            else
             {
                 inDialogue = false;
                 roundOn = true;
@@ -105,7 +107,7 @@ public class Quiz_System : MonoBehaviour
             dialogue.Add("That's Correct!");
             dialogue.Add("Now, on to the next question");
         }
-        else if(questionIndex == 0)
+        else if (questionIndex == 0)
         {
             dialogue.Add("Let's begin! Your first question is...");
         }
@@ -115,7 +117,7 @@ public class Quiz_System : MonoBehaviour
             dialogue.Add("Now, on to the next question");
         }
 
-        
+
         dialogue.Add(quizSheet[questionIndex].question);
 
         dialogueBox.SetActive(true);
@@ -141,13 +143,15 @@ public class Quiz_System : MonoBehaviour
         dialogue.Add("The exam is now over, good job");
         dialogue.Add("Your final score was " + numberCorrect.ToString() + " out of " + quizSheet.Length.ToString());
 
-        if(numberCorrect == 0 || numberCorrect == 1)
+        if (numberCorrect == 0 || numberCorrect == 1)
         {
             dialogue.Add("That's a pretty rough score, come back and try again sometime!");
-        } else if(numberCorrect == quizSheet.Length || numberCorrect == quizSheet.Length - 1)
+        }
+        else if (numberCorrect == quizSheet.Length || numberCorrect == quizSheet.Length - 1)
         {
             dialogue.Add("Wonderful! It seems you've passed with flying colors");
-        } else
+        }
+        else
         {
             dialogue.Add("Pretty good, but you can always do better!");
         }
@@ -173,7 +177,7 @@ public class Quiz_System : MonoBehaviour
                 g.SetActive(false);
             }
         }
-
+        obstacleSets[questionIndex].SetActive(true);
         SetDialogue();
     }
 
@@ -208,20 +212,23 @@ public class Quiz_System : MonoBehaviour
         {
             numberCorrect++;
             previousCorrect = true;
-        } else
+        }
+        else
         {
             previousCorrect = false;
         }
 
         //playerAnswer = "";
         questionIndex++;
+        obstacleSets[questionIndex - 1].SetActive(false);
 
         Debug.Log(numberCorrect);
 
-        if(questionIndex < quizSheet.Length)
+        if (questionIndex < quizSheet.Length)
         {
             PrepareField();
-        } else
+        }
+        else
         {
             SetFinalDialogue();
         }
@@ -229,7 +236,8 @@ public class Quiz_System : MonoBehaviour
 }
 
 [System.Serializable]
-public class QuestionAtlas{
+public class QuestionAtlas
+{
     public string question;
     public string correctAnswer;
     public string[] possibleAnswers;
