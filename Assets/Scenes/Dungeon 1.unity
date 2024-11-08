@@ -1193,13 +1193,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4740948869451126660, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4740948869451126660, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6698335393169907538, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8158,11 +8154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92b2675a6d97f045a4bcb548be7e4bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteTitle: Demo Note
-  noteBody: Demo Note Body
-  noteTitleDisplay: {fileID: 1703348678}
-  noteBodyDisplay: {fileID: 1596901589}
-  noteCanvas: {fileID: 491575303}
 --- !u!61 &1502424852
 BoxCollider2D:
   m_ObjectHideFlags: 0
