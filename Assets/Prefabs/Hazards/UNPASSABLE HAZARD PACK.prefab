@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 3109408691077451370}
   - component: {fileID: 839361645791909673}
   - component: {fileID: 7218342344942156998}
-  - component: {fileID: 5560578752845207537}
+  - component: {fileID: 3319156756491276390}
   m_Layer: 8
   m_Name: Renderer
   m_TagString: Hazard
@@ -416,8 +416,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!893571522 &5560578752845207537
-CustomCollider2D:
+--- !u!60 &3319156756491276390
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -449,9 +449,60 @@ CustomCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_CustomShapes:
-    m_Shapes: []
-    m_Vertices: []
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8, y: 4.8}
+    newSize: {x: 4.8, y: 4.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.075, y: 2.4}
+      - {x: -0.3, y: 2.2125}
+      - {x: -0.3375, y: 1.9875001}
+      - {x: -0.0125, y: 1.5500001}
+      - {x: -0.025, y: 1.3125}
+      - {x: -0.32500002, y: 1.0625}
+      - {x: -0.32500002, y: 0.90000004}
+      - {x: 0.1, y: 0.5625}
+      - {x: 0.1, y: 0.32500002}
+      - {x: 0.0125, y: 0.3125}
+      - {x: -0.025, y: 0.1375}
+      - {x: -0.2, y: -0.0125}
+      - {x: -0.2, y: -0.125}
+      - {x: 0.1, y: -0.52500004}
+      - {x: 0.0625, y: -0.675}
+      - {x: -0.0875, y: -0.6875}
+      - {x: -0.15, y: -0.875}
+      - {x: -0.3, y: -1.0125}
+      - {x: -0.3, y: -1.1875}
+      - {x: -0.025, y: -1.6125001}
+      - {x: -0.0125, y: -1.8625001}
+      - {x: -0.3125, y: -2.1125}
+      - {x: -0.3, y: -2.3}
+      - {x: -0.175, y: -2.4}
+      - {x: -0.075, y: -2.4}
+      - {x: -0.2, y: -2.2875001}
+      - {x: -0.1875, y: -2.1375}
+      - {x: 0.1, y: -1.9125}
+      - {x: 0.112500004, y: -1.6125001}
+      - {x: -0.1875, y: -1.0375}
+      - {x: 0.2125, y: -0.6875}
+      - {x: 0.2, y: -0.4875}
+      - {x: -0.112500004, y: -0.0375}
+      - {x: 0.2125, y: 0.2125}
+      - {x: 0.2125, y: 0.58750004}
+      - {x: -0.1875, y: 0.9125}
+      - {x: -0.1875, y: 1.0625}
+      - {x: -0.0875, y: 1.1125001}
+      - {x: 0.112500004, y: 1.3125}
+      - {x: 0.0875, y: 1.575}
+      - {x: -0.1875, y: 2.05}
+      - {x: 0.0375, y: 2.4}
+  m_UseDelaunayMesh: 0
 --- !u!1 &4463972863336254903
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +544,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4463972863336254903}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
