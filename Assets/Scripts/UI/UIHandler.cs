@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Application = UnityEngine.Device.Application;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -28,5 +29,13 @@ public class UIHandler : MonoBehaviour
         SettingsMenu.SetActive(!SettingsMenu.activeSelf);
     }
 
-    
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("Dungeon 1");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
