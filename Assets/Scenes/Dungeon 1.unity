@@ -1197,6 +1197,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 491575303}
     - target: {fileID: 2508027216262463167, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
+      propertyPath: NotePageSprite
+      value: 
+      objectReference: {fileID: 1075464886}
+    - target: {fileID: 2508027216262463167, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: noteBodyDisplay
       value: 
       objectReference: {fileID: 1596901589}

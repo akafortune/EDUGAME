@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using static NoteManager;
 
@@ -8,7 +9,11 @@ public class NoteManager : MonoBehaviour
 {
     public static NoteManager noteManager;
 
+    //default position for note
+    public Vector3 defaultPosition = new Vector3(240, -58, 0);
+
     public GameObject NoteCanvas;
+    public GameObject NotePageSprite;
     //list of notes that can be added
     public List<Note_Text_Display> noteList;
 
@@ -38,8 +43,10 @@ public class NoteManager : MonoBehaviour
             if(noteList != null && NoteCanvas.active == false)
             {
                 NoteCanvas.SetActive(true);
+                NotePageSprite.GetComponent<RectTransform>().localPosition = defaultPosition;
                 noteList[displayNoteNum].noteDisplayed = true;
                 Player_Movement.playerState = Player_Movement.MovementStates.ACTING;
+                
             }
             else
             {
