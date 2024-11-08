@@ -7465,6 +7465,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1168380913455502588, guid: 1a2236de8b169544f976b740c964a2a3, type: 3}
+      propertyPath: m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1870759532681455213, guid: 1a2236de8b169544f976b740c964a2a3, type: 3}
       propertyPath: m_Name
       value: Level1 Grid
