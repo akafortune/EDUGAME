@@ -9,7 +9,7 @@ public class Note_Text_Display : MonoBehaviour
     public TextMeshProUGUI noteTitleDisplay, noteBodyDisplay;
     public GameObject noteCanvas;
 
-    private bool noteDisplayed = false, readingNote = false;
+    public bool noteDisplayed = false, readingNote = false;
     // Start is called before the first frame update
     
     void Update()
@@ -48,6 +48,7 @@ public class Note_Text_Display : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        NoteManager.noteManager.noteList.Add(this);
         noteDisplayed = true;
     }
 }
