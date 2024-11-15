@@ -10,6 +10,9 @@ public class Answer_Tile : MonoBehaviour
     public bool playerOn;
 
     private TextMeshProUGUI answerDisplay;
+    public SpriteRenderer spriteRender;
+
+    public Sprite[] buttonSprite;
 
     [Header("Timer Values")]
     public static float autosubmitTime = 5;
@@ -18,6 +21,7 @@ public class Answer_Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteRender = GetComponent<SpriteRenderer>();
         answerDisplay = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
 
@@ -49,6 +53,7 @@ public class Answer_Tile : MonoBehaviour
         {
             playerOn = true;
             runAutoSubmit = true;
+            spriteRender.sprite = buttonSprite[1];
         }
     }
 
@@ -58,6 +63,7 @@ public class Answer_Tile : MonoBehaviour
         {
             playerOn = false;
             runAutoSubmit = false;
+            spriteRender.sprite = buttonSprite[0];
         }
     }
 }
