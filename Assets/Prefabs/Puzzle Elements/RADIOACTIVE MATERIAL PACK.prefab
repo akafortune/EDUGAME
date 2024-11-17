@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 1411506544213394519}
   - component: {fileID: 5836795968065368757}
   - component: {fileID: 1698351197940026077}
+  - component: {fileID: 1475989091097051808}
   m_Layer: 8
   m_Name: Radioactive Materials
   m_TagString: Untagged
@@ -505,3 +506,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1475989091097051808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797440969418054700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d0b4243f3432649a1c0a58e8e0063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 3

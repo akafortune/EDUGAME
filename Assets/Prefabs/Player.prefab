@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 7523109626793301039}
   - component: {fileID: 4001789474773480648}
   - component: {fileID: 2508027216262463167}
+  - component: {fileID: 1785568544856259298}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -290,7 +291,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.3165077}
-    oldSize: {x: 3.2, y: 3.2007816}
+    oldSize: {x: 3.2, y: 3.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -515,5 +516,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc70de5c9c662a4f80da8824a8439e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPosition: {x: 240, y: -58, z: 0}
+  NoteCanvas: {fileID: 0}
+  NotePageSprite: {fileID: 0}
   noteList: []
+  noteTitle: 
+  noteBody: 
+  noteTitleDisplay: {fileID: 0}
+  noteBodyDisplay: {fileID: 0}
   displayNoteNum: 0
+--- !u!114 &1785568544856259298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698335393169907538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d0b4243f3432649a1c0a58e8e0063e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 1
