@@ -992,6 +992,18 @@ PrefabInstance:
       propertyPath: noteTitle
       value: Model J3R-Y #2
       objectReference: {fileID: 0}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteCanvas
+      value: 
+      objectReference: {fileID: 491575303}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteBodyDisplay
+      value: 
+      objectReference: {fileID: 1596901589}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteTitleDisplay
+      value: 
+      objectReference: {fileID: 1703348678}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3052,9 +3064,21 @@ PrefabInstance:
       value: 'Mission Objective:'
       objectReference: {fileID: 0}
     - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteCanvas
+      value: 
+      objectReference: {fileID: 491575303}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
       propertyPath: readingNote
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteBodyDisplay
+      value: 
+      objectReference: {fileID: 1596901589}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteTitleDisplay
+      value: 
+      objectReference: {fileID: 1703348678}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3126,6 +3150,18 @@ PrefabInstance:
       propertyPath: noteTitle
       value: Solid Tumor Cancers
       objectReference: {fileID: 0}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteCanvas
+      value: 
+      objectReference: {fileID: 491575303}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteBodyDisplay
+      value: 
+      objectReference: {fileID: 1596901589}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteTitleDisplay
+      value: 
+      objectReference: {fileID: 1703348678}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3304,6 +3340,18 @@ PrefabInstance:
       propertyPath: noteTitle
       value: Hematologic Cancers
       objectReference: {fileID: 0}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteCanvas
+      value: 
+      objectReference: {fileID: 491575303}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteBodyDisplay
+      value: 
+      objectReference: {fileID: 1596901589}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteTitleDisplay
+      value: 
+      objectReference: {fileID: 1703348678}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6539,6 +6587,18 @@ PrefabInstance:
       propertyPath: noteTitle
       value: 'Note #2: Cancer cell'
       objectReference: {fileID: 0}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteCanvas
+      value: 
+      objectReference: {fileID: 491575303}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteBodyDisplay
+      value: 
+      objectReference: {fileID: 1596901589}
+    - target: {fileID: 7204656870688963942, guid: d7e06df5c9ac1234bb5506c10713601e, type: 3}
+      propertyPath: noteTitleDisplay
+      value: 
+      objectReference: {fileID: 1703348678}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
