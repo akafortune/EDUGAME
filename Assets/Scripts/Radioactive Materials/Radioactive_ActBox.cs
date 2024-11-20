@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 public class Radioactive_ActBox : MonoBehaviour
@@ -37,6 +38,7 @@ public class Radioactive_ActBox : MonoBehaviour
                 if(Input.GetAxis("Throw") > 0 && parent.GetComponent<Radioactive_Behavior>().currState != Radioactive_Behavior.Radioactive_State.EXPLODING)
                 {
                     playerScript.carrying = false;
+                    playerScript.thrown = true;
                     SetThrowDir();
                     parent.GetComponent<Radioactive_Behavior>().currState = Radioactive_Behavior.Radioactive_State.THROWN;
                     playerScript.carryingItem = null;
