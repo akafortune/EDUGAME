@@ -1066,6 +1066,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cancer Cluster
       objectReference: {fileID: 0}
+    - target: {fileID: 7989659088129741689, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1238,11 +1242,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1
+      value: 151.5
       objectReference: {fileID: 0}
     - target: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: -4.4
       objectReference: {fileID: 0}
     - target: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1276,6 +1280,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2508027216262463167, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
+      propertyPath: openNote
+      value: 
+      objectReference: {fileID: 8300000, guid: dca4d72958293fe4e805b714a8f8f819, type: 3}
     - target: {fileID: 2508027216262463167, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: NoteCanvas
       value: 
@@ -3815,7 +3823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791912335791476029, guid: 40083dfefba37e249bb6ba7f8d7b7a43, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000005722046
+      value: 0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 3275565927156110515, guid: 40083dfefba37e249bb6ba7f8d7b7a43, type: 3}
       propertyPath: m_AnchorMax.x

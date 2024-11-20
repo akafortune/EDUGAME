@@ -22,9 +22,12 @@ public class NoteManager : MonoBehaviour
 
     public int displayNoteNum = 0;
 
+    private AudioSource source;
+    public AudioClip openNote;
     // Start is called before the first frame update
     void Awake()
     {
+        source = gameObject.GetComponent<AudioSource>();
         if(noteManager != null)
         {
             Destroy(this);
@@ -46,7 +49,7 @@ public class NoteManager : MonoBehaviour
                 NotePageSprite.GetComponent<RectTransform>().localPosition = defaultPosition;
                 noteList[displayNoteNum].noteDisplayed = true;
                 Player_Movement.playerState = Player_Movement.MovementStates.ACTING;
-                
+                source.PlayOneShot(openNote);
             }
             else
             {
