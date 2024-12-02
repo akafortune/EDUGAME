@@ -39,11 +39,11 @@ public class Player_Movement : MonoBehaviour
     public static MovementStates playerState;
     public Vector3 rollTarget, hitPos, reelTarget;
     public Transform carryPos;
-    public bool restand, actionable, intangible, carrying, reeled = false;
+    public bool restand, actionable, intangible, carrying, reeled = false, thrown = false;
     public GameObject stunBox, carryingItem;
     private BoxCollider2D collisionBox;
-    public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience;
-    private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0;
+    public float speed, rollDist, reelSpeed, reelDist, stunDist, rollSpeed, restandTime, rollTime, swingTime, downTime, intangibleTime, hitPosLenience, cheatTime;
+    private float restandTimer = 0, rollTimer = 0, swingTimer = 0, downTimer = 0, intangibleTimer = 0, cheatTimer = 0;
 
     public HealthSystem healthSys; // the health system script attatched to the player
 
@@ -68,6 +68,20 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
+        if (thrown)
+        {
+            cheatTimer += Time.deltaTime;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+
+            if(cheatTimer >= cheatTime)
+            {
+                this.GetComponent<BoxCollider2D>().enabled = true;
+                cheatTimer = 0;
+                thrown = false;
+            }
+        }
+
+
         actionable = ActionCheck();
 
         collisionBox.isTrigger = false;

@@ -27,6 +27,14 @@ public class UIHandler : MonoBehaviour
     public void ToggleSettings()
     {
         SettingsMenu.SetActive(!SettingsMenu.activeSelf);
+        if (SettingsMenu.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void LoadTutorial()

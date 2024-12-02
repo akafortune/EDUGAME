@@ -179,7 +179,6 @@ public class Basic_Enemy_Behavior : MonoBehaviour
             anim.SetBool("isCharging", false);
             enemyState = EnemyState.LOOKING;
         }
-
     }
 
     void Look()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,9 +19,15 @@ public class Answer_Tile : MonoBehaviour
     public static float autosubmitTime = 5;
     public bool runAutoSubmit = false;
     private float autosubmitTimer = 0;
+
+    private int timerIncrement = 0;
+    private AudioSource source;
+    public AudioClip timerSFX;
+    public AudioClip submitSound;
     // Start is called before the first frame update
     void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         spriteRender = GetComponent<SpriteRenderer>();
         answerDisplay = this.gameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
@@ -34,9 +41,10 @@ public class Answer_Tile : MonoBehaviour
         if (runAutoSubmit && GetComponentInParent<Quiz_System>().roundOn)
         {
             autosubmitTimer += Time.deltaTime;
-
+            
             if (autosubmitTimer >= autosubmitTime)
             {
+                source.PlayOneShot(submitSound);
                 autosubmitTimer = 0;
                 GetComponentInParent<Quiz_System>().TeardownField();
             }
@@ -51,6 +59,8 @@ public class Answer_Tile : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            timerIncrement = 1;
+            source.PlayOneShot(timerSFX);
             playerOn = true;
             runAutoSubmit = true;
             spriteRender.sprite = buttonSprite[1];
@@ -61,6 +71,7 @@ public class Answer_Tile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            timerIncrement = 0;
             playerOn = false;
             runAutoSubmit = false;
             spriteRender.sprite = buttonSprite[0];
