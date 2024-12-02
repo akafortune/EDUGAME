@@ -1,0 +1,1315 @@
+fileFormatVersion: 2
+guid: 71fa1bc98735a60478b19f1154f4e2fd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 715
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95b4889737478884cac155e72062fbfa
+      internalID: -987848664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 715
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11e6eaef9fbb974bbc5ad9739e40300
+      internalID: 2066336616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 715
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e48ec041aed50249af9647af38fc379
+      internalID: 699282603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 715
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd98db1839f498049af29ad34ddf0c50
+      internalID: 611614982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 715
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1941af34d57b154da9e232c0cab390a
+      internalID: -882103247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 635
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d415ffd06d81a6a419a6a3074fcdc586
+      internalID: -1226175026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 635
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8bee778c1465f4fa100e6ef49daa0b
+      internalID: -948824537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_7
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 635
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7943d059dc68249b1bc81001d08c39
+      internalID: -2001890696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 635
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971096a43f255cb41aca235395e7543c
+      internalID: -1222298582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_9
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 635
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8bd95571e529b4ea918b43b2c99309
+      internalID: 793658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 555
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72773cfa1e9508543b1a12f35e6ea269
+      internalID: -1447853688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 555
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b021a1fd80ac1bd4b93be79cde6999c0
+      internalID: -1862528595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_12
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 555
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd6483408a0a1947b1a11de834f74de
+      internalID: -2065785150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_13
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 555
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac69eceb936190b488d4ee9bded40c17
+      internalID: -398414170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_14
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 555
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e44f5cc7dde07479353c8989e614ae
+      internalID: -911683608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66bbdd7e3f52a1540b5fa9cea577f659
+      internalID: -1608164433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2fe40fa6632544ab6e86c71fcd3064
+      internalID: -269899120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_17
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6e82569084d6e48a566d7008150cc3
+      internalID: -275925545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_18
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a60b8a013d09394b8e318b992784e77
+      internalID: -1168347432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_19
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a538ed08fed9faa4f89f301f68c310e9
+      internalID: -192052520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_20
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf4690dfd0147ea4a8802cf58d4bfab0
+      internalID: 768719427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4712746937a4f34fb02e26d24100922
+      internalID: 1440249294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_22
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d3e2f3aea2a7ef40a4e6d7fa5cca2d6
+      internalID: 981195117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_23
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 475
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab879be13b892445b28a71c2419a837
+      internalID: -377035447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_24
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 395
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67658e10701e3342b584a3e069be8ab
+      internalID: 1591856331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 395
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed4f2c9af1242f45a29a2bb45b92d9f
+      internalID: -1306798291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_26
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 395
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4830111a4d4bb6a4b860528cdf05090b
+      internalID: 1997761042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_27
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 395
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea998054fe74f240aca8dde8cf2d4c3
+      internalID: -105823895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 315
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda4da58b01fa3c4e9f9d0a6479cf768
+      internalID: -287724816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_29
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 315
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d42efb052afc9438ad48ee7f769236
+      internalID: -598142871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_30
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 315
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7d2007778a759419e4c7889d15541d
+      internalID: -2104916904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_31
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 315
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc4038f73018b94fb310736e3e5c5cf
+      internalID: 1277018801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_32
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 315
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d19bb9affce74b4cb5741ce2c9ff06d
+      internalID: -1891875636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_33
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 235
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9c6750f2102c94db6f719199d28ff4
+      internalID: 479576987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_34
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 235
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbc64e48274331458814e4ed9214381
+      internalID: 185067087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_35
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 235
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f95e419f9f51ae449518a4b924ebfdb
+      internalID: -974021370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_36
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 235
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863a3af623f481e4899bafe65848e7ad
+      internalID: -4288473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523616c5cfce34845a258989582e12a7
+      internalID: -1456943959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_38
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc453b236b2a23488fde03640853144
+      internalID: -1062790087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_39
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e49f01caadd73f47820ec3a6d6b04df
+      internalID: 241866308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_40
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 780333f526b3bfa4dba1ffd4b4883ef0
+      internalID: -942008653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_41
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f35b92797c905e4d9fa7e4d4bb825f0
+      internalID: -1179746231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_42
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db66de69f4f974946b24709e60f4f667
+      internalID: -1072078386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_43
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2309eb5add7496f4a99e7411d1deaa9e
+      internalID: -2079456992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_44
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd40e467da82826459b2554e86a9da84
+      internalID: -292809349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_45
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038d6edf70b6590458c4157f12b73c38
+      internalID: -2092574313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_46
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8358c03b8a87c0143bb2270510a81a8c
+      internalID: -984331866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_47
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 155
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969aaf3c94f4d81479045122ff130b70
+      internalID: 1753432640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672a54b245af5e042920faea329c03ed
+      internalID: 37294163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 75
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b680ab4cbfa8b334c9a13581ee4d7748
+      internalID: 264511318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_50
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 75
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ba563539e6f4641931a9789610c264
+      internalID: 1107329744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_51
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 75
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bade075d6efa8764680d33e0d58c367c
+      internalID: 1593280330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_52
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 75
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be5e192c9426f548807c760980680fb
+      internalID: 1088538499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EDUGame Tilemap Walls-Level2_53
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 75
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fed11d5ddda1d458a0fc56213b05e0
+      internalID: -694024846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      EDUGame Tilemap Walls-Level2_0: -987848664
+      EDUGame Tilemap Walls-Level2_1: 2066336616
+      EDUGame Tilemap Walls-Level2_10: -1447853688
+      EDUGame Tilemap Walls-Level2_11: -1862528595
+      EDUGame Tilemap Walls-Level2_12: -2065785150
+      EDUGame Tilemap Walls-Level2_13: -398414170
+      EDUGame Tilemap Walls-Level2_14: -911683608
+      EDUGame Tilemap Walls-Level2_15: -1608164433
+      EDUGame Tilemap Walls-Level2_16: -269899120
+      EDUGame Tilemap Walls-Level2_17: -275925545
+      EDUGame Tilemap Walls-Level2_18: -1168347432
+      EDUGame Tilemap Walls-Level2_19: -192052520
+      EDUGame Tilemap Walls-Level2_2: 699282603
+      EDUGame Tilemap Walls-Level2_20: 768719427
+      EDUGame Tilemap Walls-Level2_21: 1440249294
+      EDUGame Tilemap Walls-Level2_22: 981195117
+      EDUGame Tilemap Walls-Level2_23: -377035447
+      EDUGame Tilemap Walls-Level2_24: 1591856331
+      EDUGame Tilemap Walls-Level2_25: -1306798291
+      EDUGame Tilemap Walls-Level2_26: 1997761042
+      EDUGame Tilemap Walls-Level2_27: -105823895
+      EDUGame Tilemap Walls-Level2_28: -287724816
+      EDUGame Tilemap Walls-Level2_29: -598142871
+      EDUGame Tilemap Walls-Level2_3: 611614982
+      EDUGame Tilemap Walls-Level2_30: -2104916904
+      EDUGame Tilemap Walls-Level2_31: 1277018801
+      EDUGame Tilemap Walls-Level2_32: -1891875636
+      EDUGame Tilemap Walls-Level2_33: 479576987
+      EDUGame Tilemap Walls-Level2_34: 185067087
+      EDUGame Tilemap Walls-Level2_35: -974021370
+      EDUGame Tilemap Walls-Level2_36: -4288473
+      EDUGame Tilemap Walls-Level2_37: -1456943959
+      EDUGame Tilemap Walls-Level2_38: -1062790087
+      EDUGame Tilemap Walls-Level2_39: 241866308
+      EDUGame Tilemap Walls-Level2_4: -882103247
+      EDUGame Tilemap Walls-Level2_40: -942008653
+      EDUGame Tilemap Walls-Level2_41: -1179746231
+      EDUGame Tilemap Walls-Level2_42: -1072078386
+      EDUGame Tilemap Walls-Level2_43: -2079456992
+      EDUGame Tilemap Walls-Level2_44: -292809349
+      EDUGame Tilemap Walls-Level2_45: -2092574313
+      EDUGame Tilemap Walls-Level2_46: -984331866
+      EDUGame Tilemap Walls-Level2_47: 1753432640
+      EDUGame Tilemap Walls-Level2_48: 37294163
+      EDUGame Tilemap Walls-Level2_49: 264511318
+      EDUGame Tilemap Walls-Level2_5: -1226175026
+      EDUGame Tilemap Walls-Level2_50: 1107329744
+      EDUGame Tilemap Walls-Level2_51: 1593280330
+      EDUGame Tilemap Walls-Level2_52: 1088538499
+      EDUGame Tilemap Walls-Level2_53: -694024846
+      EDUGame Tilemap Walls-Level2_6: -948824537
+      EDUGame Tilemap Walls-Level2_7: -2001890696
+      EDUGame Tilemap Walls-Level2_8: -1222298582
+      EDUGame Tilemap Walls-Level2_9: 793658
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
