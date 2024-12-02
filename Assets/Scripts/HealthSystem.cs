@@ -83,7 +83,8 @@ public class HealthSystem : MonoBehaviour
         //Debug.Log(PlayerPrefs.GetFloat("respawnY"));
         this.transform.position = new Vector3(PlayerPrefs.GetFloat("respawnX", this.transform.position.x),
             PlayerPrefs.GetFloat("respawnY", this.transform.position.y),0f);
-        OnHeal((int)(maxHealth/2) + 1); // healing up to half of the health
+        //OnHeal((int)(maxHealth/2) + 1); // healing up to half of the health
+        OnHeal(maxHealth);
         hasDied = false;
         countDown = timeTillRespawn;
         this.GetComponent<SpriteRenderer>().enabled = true;
