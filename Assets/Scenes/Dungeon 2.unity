@@ -8000,6 +8000,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoteCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6593277241560765071, guid: 4c40ddedb72b8254f8548711469dfc11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8239651639286763438, guid: 4c40ddedb72b8254f8548711469dfc11, type: 3}
       propertyPath: m_Pivot.x
       value: 0
