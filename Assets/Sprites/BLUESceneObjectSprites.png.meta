@@ -252,7 +252,7 @@ TextureImporter:
       - - {x: -21, y: -77.5}
         - {x: 1, y: -50.5}
         - {x: 29, y: -49.5}
-        - {x: 68, y: -77.5}
+        - {x: 53, y: -77.5}
       tessellationDetail: 0
       bones: []
       spriteID: 7580b80baacefec49987569db6ad152a
