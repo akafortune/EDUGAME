@@ -31,7 +31,10 @@ public class Bullet_Enemy : MonoBehaviour
 
             if (inRange)
             {
-                transform.right = enemyInRange.transform.position - transform.position;
+                if(enemyInRange != null)
+                {
+                    transform.right = enemyInRange.transform.position - transform.position;
+                }
                 spawnPos.rotation = this.gameObject.transform.rotation;
 
                 //increment shoot timer, shoot if over

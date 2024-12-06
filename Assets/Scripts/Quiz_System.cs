@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class Quiz_System : MonoBehaviour
@@ -30,7 +31,7 @@ public class Quiz_System : MonoBehaviour
     public GameObject[] obstacleSets;
     private int numberCorrect, questionIndex = 0;
 
-    public bool roundOn = false;
+    public bool roundOn = false, last = false;
     private bool previousCorrect, fadeOut, lastLines = false;
     private List<string> dialogue = new List<string>();
     // Start is called before the first frame update
@@ -66,7 +67,14 @@ public class Quiz_System : MonoBehaviour
 
         if (fadeOutTimer >= fadeOutTime)
         {
-            Application.Quit();
+            if (!last)
+            {
+                SceneManager.LoadScene("Dungeon 2");
+            } else
+            {
+                Application.Quit();
+            }
+            
         }
     }
 
