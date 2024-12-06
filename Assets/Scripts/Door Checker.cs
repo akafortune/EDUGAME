@@ -27,9 +27,9 @@ public class DoorChecker : MonoBehaviour
 
     bool CheckClusters()
     {
-        for(int i = 0; i <= requiredClusters.Length; i++)
+        for(int i = 0; i <= requiredClusters.Length - 1; i++)
         {
-            if(requiredClusters[i].currState == Cancer_Cell_NK_Bheavior.CancerClusterState.ALIVE)
+            if(requiredClusters[i].currState == Cancer_Cell_NK_Bheavior.CancerClusterState.DEAD)
             {
                 return true;
             }
