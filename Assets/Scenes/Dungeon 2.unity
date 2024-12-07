@@ -382,19 +382,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193703553532802554, guid: b44da40db9bc8d347a264afbf18cd851, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -50.712032
+      value: -53.66588
       objectReference: {fileID: 0}
     - target: {fileID: 6193703553532802554, guid: b44da40db9bc8d347a264afbf18cd851, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 27.375671
+      value: 27.080257
       objectReference: {fileID: 0}
     - target: {fileID: 6193703553532802554, guid: b44da40db9bc8d347a264afbf18cd851, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -50.46376
+      value: -52.826843
       objectReference: {fileID: 0}
     - target: {fileID: 6193703553532802554, guid: b44da40db9bc8d347a264afbf18cd851, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: -92.23666
+      value: -92.23668
       objectReference: {fileID: 0}
     - target: {fileID: 6193703553532802554, guid: b44da40db9bc8d347a264afbf18cd851, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
@@ -3783,11 +3783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1487037323709038764, guid: 859639ba877aa6e42b8423edbf3e1b97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7462,7 +7462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8611554844899358624, guid: 07d55f59f3267eb4aba610322e856b46, type: 3}
       propertyPath: decayTime
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8611554844899358624, guid: 07d55f59f3267eb4aba610322e856b46, type: 3}
       propertyPath: throwDist
