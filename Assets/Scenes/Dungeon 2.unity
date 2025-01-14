@@ -2525,7 +2525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791912335791476029, guid: 40083dfefba37e249bb6ba7f8d7b7a43, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000005722046
+      value: 0.000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 3275565927156110515, guid: 40083dfefba37e249bb6ba7f8d7b7a43, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4591,6 +4591,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: -0.18676995
       objectReference: {fileID: 0}
+    - target: {fileID: 5530623274560798826, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -45
+      objectReference: {fileID: 0}
     - target: {fileID: 7989659088129741689, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_Name
       value: Cancer Cluster
@@ -5450,6 +5454,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5530623274560798826, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -45
+      objectReference: {fileID: 0}
     - target: {fileID: 7989659088129741689, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_Name
       value: Cancer Cluster
@@ -6266,6 +6274,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5530623274560798826, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -45
+      objectReference: {fileID: 0}
     - target: {fileID: 7989659088129741689, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_Name
       value: Cancer Cluster (1)
@@ -6725,6 +6737,10 @@ PrefabInstance:
     - target: {fileID: 3842715022691466511, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5530623274560798826, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7989659088129741689, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_Name
@@ -12028,7 +12044,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -45
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12900,7 +12916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5530623274560798826, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7989659088129741689, guid: 3edea80e73dc81e439bc96edd8a5988a, type: 3}
       propertyPath: m_Name
